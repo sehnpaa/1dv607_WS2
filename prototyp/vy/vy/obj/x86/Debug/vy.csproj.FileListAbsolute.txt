@@ -1,0 +1,5 @@
+P:\1dv607\vy\vy\bin\Debug\vy.exe
+P:\1dv607\vy\vy\bin\Debug\vy.pdb
+P:\1dv607\vy\vy\obj\x86\Debug\vy.exe
+P:\1dv607\vy\vy\obj\x86\Debug\vy.pdb
+P:\1dv607\vy\vy\obj\x86\Debug\vy.csprojResolveAssemblyReference.cache
