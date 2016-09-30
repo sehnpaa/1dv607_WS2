@@ -12,10 +12,14 @@ namespace BoatClub.Controller
     {
         public static void takeInput(MemberRegistry model, CLI view)
         {
-            var input = System.Console.ReadLine();
-            view.update();
-            
-            
+            String input;
+            while (true)
+            {
+                Console.WriteLine("Gör ditt val: ");
+                input = Console.ReadLine();
+                model.register(input);
+                view.update();
+            }
         }
     }
 }
