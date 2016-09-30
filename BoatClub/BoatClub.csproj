@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Action.cs" />
     <Compile Include="Model\BoatType.cs" />
     <Compile Include="Controller\InputListener.cs" />
     <Compile Include="Model\Boat.cs" />
