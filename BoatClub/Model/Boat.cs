@@ -7,6 +7,11 @@ namespace BoatClub.Model
 
         public BoatType BoatType { get; set; }
 
+        public Boat()
+        {
+            
+        }
+
         public Boat(BoatType boatType)
         {
             BoatType = boatType;
