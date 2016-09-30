@@ -18,7 +18,7 @@ namespace BoatClub.View
         }
         public void update()
         {
-            Console.WriteLine("vy uppdatering: " + model.getMembersVL());
+            Console.WriteLine("vy uppdatering: " + model.GetMembersVl());
         }
     }
 }

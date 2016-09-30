@@ -1,15 +1,14 @@
 ﻿using System;
-using BoatClub.Storage;
 
 namespace BoatClub.Model
 {
     class MemberRegistry
     {
-        public void register(String name)
+        public void Register(String name)
         {
             XML.save(name);
         }
-        public String getMembersVL()
+        public String GetMembersVl()
         {
             return XML.load();
         }

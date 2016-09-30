@@ -26,7 +26,7 @@ namespace BoatClub.Controller
             {
                 Console.WriteLine("Gör ditt val: ");
                 input = Console.ReadLine();
-                registry.register(input);
+                registry.Register(input);
                 cli.update();
             }
         }
