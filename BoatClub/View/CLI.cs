@@ -15,10 +15,20 @@ namespace BoatClub.View
         {
             // TODO: Complete member initialization
             this.model = model;
+            DisplayApplicationHeader();
         }
         public void update()
         {
             Console.WriteLine("vy uppdatering: " + model.GetMembersVl());
+        }
+
+        private void DisplayApplicationHeader()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Boat Club Version[1.0.0]");
+            Console.WriteLine("2016 C. Trosell, P. Andersson, U. Skarin\n");
+            Console.ResetColor();
         }
     }
 }
