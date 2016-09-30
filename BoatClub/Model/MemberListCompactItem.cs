@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoatClub.Model
 {
-    class MemberListCompactItem //Name, member id, number of boats
+    class MemberListCompactItem
     {
         public string Name;
         public string MemberID;
