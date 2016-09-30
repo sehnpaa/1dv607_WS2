@@ -65,6 +65,8 @@ namespace BoatClub.Model
         {
 
         }
+
+        [Obsolete("Please use MemberRegistry.GetMemberListVerbose instead")]
         public String GetMembersVl()
         {
             return XML.load();
