@@ -27,6 +27,7 @@ namespace BoatClub.Model
             return memberList;
         }
 
+        [Obsolete("Please use GetMemberListFromXMLFile instead.")]
         public static String load()
         {
             // Load data
