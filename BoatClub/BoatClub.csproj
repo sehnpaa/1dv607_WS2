@@ -48,7 +48,8 @@
     <Compile Include="Controller\InputListener.cs" />
     <Compile Include="Model\Boat.cs" />
     <Compile Include="Model\Member.cs" />
-    <Compile Include="Model\MemberListCompactComponent.cs" />
+    <Compile Include="Model\MemberListVerboseItem.cs" />
+    <Compile Include="Model\MemberListCompactItem.cs" />
     <Compile Include="Model\MemberRegistry.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

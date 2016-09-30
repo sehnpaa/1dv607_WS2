@@ -55,6 +55,11 @@ namespace BoatClub.Model
             return memberList;
         } 
 
+        public void SaveMemberList(List<Member> memberList)
+        {
+            XML.SaveMemberListToXMLFile(memberList);
+        }
+
 
         public void Register(String name)
         {
