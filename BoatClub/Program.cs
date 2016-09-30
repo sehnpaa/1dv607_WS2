@@ -17,7 +17,7 @@ namespace BoatClub
             var registry = new MemberRegistry();
             var cli = new CLI(registry);
             var inputListener = new InputListener(registry, cli);
-            inputListener.takeInput();
+            inputListener.TakeInput();
         }
     }
 }

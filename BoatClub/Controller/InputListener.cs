@@ -10,24 +10,23 @@ namespace BoatClub.Controller
 {
     class InputListener
     {
-        private CLI cli;
-        private MemberRegistry registry;
+        private readonly CLI _cli;
+        private readonly MemberRegistry _registry;
 
         public InputListener(MemberRegistry registry, CLI cli)
         {
-            this.registry = registry;
-            this.cli = cli;
+            this._registry = registry;
+            this._cli = cli;
         }
 
-        public void takeInput()
+        public void TakeInput()
         {
-            String input;
             while (true)
             {
                 Console.WriteLine("Gör ditt val: ");
-                input = Console.ReadLine();
-                registry.Register(input);
-                cli.update();
+                var input = Console.ReadLine();s
+                _registry.Register(input);
+                _cli.update();
             }
         }
     }
