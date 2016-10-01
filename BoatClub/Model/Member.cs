@@ -5,9 +5,11 @@ namespace BoatClub.Model
 {
     public class Member
     {
+        private static int _id = 0; // TODO check
+
         private string _name;
         private string _personalNumber;
-        public string MemberId; // TODO 
+       
         public List<Boat> Boats = new List<Boat>();
 
         public string Name
@@ -53,6 +55,9 @@ namespace BoatClub.Model
             }
         }
 
+        public string MemberId { get; }
+
+
         public Member()
         {
 
@@ -60,8 +65,10 @@ namespace BoatClub.Model
 
         public Member(string name, string pNumber) : this()
         {
+            _id++; // Todo check
             Name = name;
             PersonalNumber = pNumber;
+            MemberId = _id.ToString(); // Todo check
         }
 
         public override string ToString() => string.Format($"{MemberId}, {Name}, {PersonalNumber}");
