@@ -7,7 +7,7 @@ namespace BoatClub.Model
     {
         private string _name;
         private string _personalNumber;
-        public string MemberId;
+        public string MemberId; // TODO 
         public List<Boat> Boats = new List<Boat>();
 
         public string Name
@@ -49,15 +49,16 @@ namespace BoatClub.Model
 
             set
             {
+                if (value == null) throw new ArgumentNullException(nameof(value));
             }
         }
 
         public Member()
         {
-            
+
         }
 
-        public Member(string name, string pNumber)
+        public Member(string name, string pNumber) : this()
         {
             Name = name;
             PersonalNumber = pNumber;

@@ -14,6 +14,9 @@ namespace BoatClub
     {
         static void Main(string[] args)
         {
+            //var member = new Member("Test", "1234567890");
+            //Console.WriteLine(member.ToString());
+
             var registry = new MemberRegistry();
             var cli = new CLI(registry);
             var inputListener = new InputListener(registry, cli);

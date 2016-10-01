@@ -12,7 +12,7 @@ namespace BoatClub.Model
             
         }
 
-        public Boat(BoatType boatType)
+        public Boat(BoatType boatType) : this()
         {
             BoatType = boatType;
         }
