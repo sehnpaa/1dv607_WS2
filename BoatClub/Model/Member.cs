@@ -90,10 +90,28 @@ namespace BoatClub.Model
             return age >= 18;
         }
 
-        public override string ToString() => string.Format(
-            $"{MemberId}. " +
-            $"{Name}, " +
-            $"{PersonalNumber}, " +
-            $" {string.Join(", ", Boats)}");
+        public override string ToString()
+        {
+            return ToString("CL");
+        }
+
+        public string ToString(string format)
+        {
+            string output = "";
+
+            if (format == "CL")
+            {
+                output = string.Format($"\nMember: {Name} " + $"\nID: {MemberId} " + $"\nNumber of Boats: {Boats.Count}");
+            }
+
+            if (format == "VL")
+            {
+                output = string.Format($"\nMember: {Name} " +
+                                       $"\nPersonalNumber: {PersonalNumber} " +
+                                       $"\nID: {MemberId} " +
+                                       $"\nBoats: \n{string.Join("| ", Boats)}\n");
+            }
+            return output;
+        }
     }
 }

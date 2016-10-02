@@ -21,7 +21,9 @@ namespace BoatClub
                 var testMember = new Member("Ulrica Skarin", "19720623-0000");
                 testMember.AddBoat(new Boat(BoatType.KayakOrCanoe, 1500));
                 testMember.AddBoat(new Boat(BoatType.MotorSailer, 2500));
-                Console.WriteLine(testMember.ToString());
+                testMember.AddBoat(new Boat(BoatType.SailBoat, 3700));
+                Console.WriteLine(testMember.ToString("VL")); // -> Verbose info for ONE member
+                Console.WriteLine(testMember.ToString("CL")); // -> Compact info for ONE member
             }
             catch (Exception e)
             {
