@@ -14,18 +14,18 @@ namespace BoatClub
     {
         static void Main(string[] args)
         {
+            // TODO: Get rid of when live. Testing purposes.
             //try
             //{
-            //    var testMember = new Member("Name", "7206230562");
+            //    var testMember = new Member("Name", "720623-0562");
+            //    testMember.AddBoat(new Boat(BoatType.KayakOrCanoe, 1500));
+            //    testMember.AddBoat(new Boat(BoatType.MotorSailer, 2500));
             //    Console.WriteLine(testMember.ToString());
             //}
             //catch (Exception e)
             //{
             //    Console.WriteLine(e);
             //}
-
-            //var boat = new Boat(BoatType.MotorSailer, 1500);
-            //Console.WriteLine(boat.ToString());
 
             var registry = new MemberRegistry();
             var cli = new CLI(registry);

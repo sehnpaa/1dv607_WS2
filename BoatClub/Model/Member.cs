@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace BoatClub.Model
@@ -73,6 +75,11 @@ namespace BoatClub.Model
             
         }
 
+        internal void AddBoat(Boat boat)
+        {
+            Boats.Add(boat);
+        }
+
        private static bool IsPersonalNumberValid(string number)
         {
             Regex regEx = new Regex(@"^(\d{1})(\d{5})\-(\d{4})$");
@@ -80,8 +87,11 @@ namespace BoatClub.Model
 
             return matchInNumber.Success;
         }
-
-        public override string ToString() => string.Format($"{MemberId}, {Name}, {PersonalNumber}");
+    
+        public override string ToString() => string.Format(
+            $"{MemberId}, " +
+            $"{Name}, " +
+            $"{PersonalNumber}, " +
+            $" {string.Join(", ", Boats)}");
     }
-
 }

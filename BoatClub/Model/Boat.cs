@@ -34,5 +34,6 @@ namespace BoatClub.Model
         }
 
         public override string ToString() => string.Format($"{BoatType}, {BoatLength} cm");
+
     }
 }
