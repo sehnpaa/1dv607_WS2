@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="BoatClub.Controller.InputListener" Collapsed="true">
+  <Class Name="BoatClub.Controller.InputListener">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAAAAACAAAAgAAAAAAAAAAAAAAA=</HashCode>
@@ -24,28 +24,28 @@
       <Property Name="Boat" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="BoatClub.Model.MemberRegistry" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Class Name="BoatClub.Model.MemberRegistry">
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAACAAAAAAAAAAAAFABAAAAAAAAAQAAA=</HashCode>
       <FileName>Model\MemberRegistry.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BoatClub.Program" Collapsed="true">
-    <Position X="8.5" Y="2.25" Width="1.5" />
+  <Class Name="BoatClub.Program">
+    <Position X="8.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BoatClub.Model.XML" Collapsed="true">
+  <Class Name="BoatClub.Model.XML">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAIEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Model\XML.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BoatClub.View.CLI" Collapsed="true">
+  <Class Name="BoatClub.View.CLI">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAMAAA=</HashCode>

@@ -7,7 +7,6 @@ namespace BoatClub.Model
     public class Member
     {
         private static int _id = 0; // TODO check
-
         private string _name;
         private string _personalNumber;
        
