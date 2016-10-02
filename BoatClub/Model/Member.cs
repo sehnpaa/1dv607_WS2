@@ -57,7 +57,6 @@ namespace BoatClub.Model
             }
         }
 
-
         public Member()
         {
 
@@ -65,13 +64,16 @@ namespace BoatClub.Model
 
         public Member(string name, string pNumber) : this()
         {
+            // TODO implement correct ID:
             _id++; // Todo check
+            MemberId = _id.ToString();
+
             Name = name;
             PersonalNumber = pNumber;
-            MemberId = _id.ToString(); // Todo check
+            
         }
 
-       private bool IsPersonalNumberValid(string number)
+       private static bool IsPersonalNumberValid(string number)
         {
             Regex regEx = new Regex(@"^(\d{1})(\d{5})\-(\d{4})$");
             Match matchInNumber = regEx.Match(number);

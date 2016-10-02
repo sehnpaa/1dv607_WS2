@@ -24,6 +24,9 @@ namespace BoatClub
             //    Console.WriteLine(e);
             //}
 
+            //var boat = new Boat(BoatType.MotorSailer, 1500);
+            //Console.WriteLine(boat.ToString());
+
             var registry = new MemberRegistry();
             var cli = new CLI(registry);
             var inputListener = new InputListener(registry, cli);
