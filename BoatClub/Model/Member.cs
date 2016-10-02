@@ -7,10 +7,10 @@ namespace BoatClub.Model
 {
     public class Member
     {
-        private static int _id = 0; // TODO check
+        private static int _id; // TODO check
         private string _name;
         private string _personalNumber;
-       
+
         public List<Boat> Boats = new List<Boat>();
 
         public string Name
@@ -23,19 +23,6 @@ namespace BoatClub.Model
                     throw new ArgumentNullException(nameof(value));
                 }
                 _name = value;
-            }
-        }
-
-        internal Boat Boat // TODO
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                if (value == null) throw new ArgumentNullException(nameof(value));
             }
         }
 
@@ -60,7 +47,6 @@ namespace BoatClub.Model
 
         public Member()
         {
-
         }
 
         public Member(string name, string pNumber) : this()
@@ -71,7 +57,6 @@ namespace BoatClub.Model
 
             Name = name;
             PersonalNumber = pNumber;
-            
         }
 
         internal void AddBoat(Boat boat)
@@ -104,9 +89,9 @@ namespace BoatClub.Model
                 age--;
             return age >= 18;
         }
-    
+
         public override string ToString() => string.Format(
-            $"{MemberId}, " +
+            $"{MemberId}. " +
             $"{Name}, " +
             $"{PersonalNumber}, " +
             $" {string.Join(", ", Boats)}");

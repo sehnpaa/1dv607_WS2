@@ -10,19 +10,16 @@
   <Class Name="BoatClub.Model.Boat">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAEAAAAAAAEAAA=</HashCode>
       <FileName>Model\Boat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoatClub.Model.Member">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAEIABAAQQAAQAAAAAAAAAAAAAAACA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAEAAFAAQQAAQAAAAABAAAAAAAAACA=</HashCode>
       <FileName>Model\Member.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Boat" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="BoatClub.Model.MemberRegistry">
     <Position X="0.5" Y="2.75" Width="1.5" />
