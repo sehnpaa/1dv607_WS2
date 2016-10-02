@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace BoatClub.Model
 {
@@ -25,23 +26,6 @@ namespace BoatClub.Model
             }
         }
 
-        public string PersonalNumber
-        {
-            get { return _personalNumber; }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentNullException(nameof(value));
-                }
-                if (value.Length != 10)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value));
-                }
-                _personalNumber = value;
-            }
-        }
-
         internal Boat Boat // TODO
         {
             get
@@ -57,6 +41,23 @@ namespace BoatClub.Model
 
         public string MemberId { get; }
 
+        public string PersonalNumber
+        {
+            get { return _personalNumber; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException(nameof(value));
+                }
+                if (IsPersonalNumberValid(value) == false)
+                {
+                    throw new ArgumentException(nameof(value));
+                }
+                _personalNumber = value;
+            }
+        }
+
 
         public Member()
         {
@@ -71,6 +72,15 @@ namespace BoatClub.Model
             MemberId = _id.ToString(); // Todo check
         }
 
+       private bool IsPersonalNumberValid(string number)
+        {
+            Regex regEx = new Regex(@"^(\d{1})(\d{5})\-(\d{4})$");
+            Match matchInNumber = regEx.Match(number);
+
+            return matchInNumber.Success;
+        }
+
         public override string ToString() => string.Format($"{MemberId}, {Name}, {PersonalNumber}");
     }
+
 }

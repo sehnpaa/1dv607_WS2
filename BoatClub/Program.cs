@@ -14,8 +14,15 @@ namespace BoatClub
     {
         static void Main(string[] args)
         {
-            //var testMember = new Member("Name", "0123456789");
-            //Console.WriteLine(testMember.ToString());
+            //try
+            //{
+            //    var testMember = new Member("Name", "7206230562");
+            //    Console.WriteLine(testMember.ToString());
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
 
             var registry = new MemberRegistry();
             var cli = new CLI(registry);
