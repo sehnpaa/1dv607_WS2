@@ -17,7 +17,8 @@ namespace BoatClub
             // TODO: Get rid of when live. Testing purposes.
             //try
             //{
-            //    var testMember = new Member("Name", "720623-0562");
+            //    // PersonalNumber of format: yyMMdd" or "yyyyMMdd:
+            //    var testMember = new Member("Ulrica Skarin", "19720623-0000");
             //    testMember.AddBoat(new Boat(BoatType.KayakOrCanoe, 1500));
             //    testMember.AddBoat(new Boat(BoatType.MotorSailer, 2500));
             //    Console.WriteLine(testMember.ToString());

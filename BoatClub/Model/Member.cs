@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace BoatClub.Model
@@ -65,7 +66,7 @@ namespace BoatClub.Model
         public Member(string name, string pNumber) : this()
         {
             // TODO implement correct ID:
-            _id++; // Todo check
+            _id++;
             MemberId = _id.ToString();
 
             Name = name;
@@ -78,12 +79,30 @@ namespace BoatClub.Model
             Boats.Add(boat);
         }
 
-       private static bool IsPersonalNumberValid(string number)
+        private static bool IsPersonalNumberValid(string number)
         {
-            Regex regEx = new Regex(@"^(\d{1})(\d{5})\-(\d{4})$");
-            Match matchInNumber = regEx.Match(number);
+            const string regEx = @"^(?<date>\d{6}|\d{8})[-\s]?\d{4}$";
+            var date = Regex.Match(number, regEx).Groups["date"].Value;
+            DateTime dateTime;
 
-            return matchInNumber.Success;
+            if (DateTime.TryParseExact(date, new[] {"yyMMdd", "yyyyMMdd"},
+                new CultureInfo("sv-SE"), DateTimeStyles.None, out dateTime))
+            {
+                //Console.WriteLine(IsOfLegalAge(dateTime));
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool IsOfLegalAge(DateTime birthdate)
+        {
+            var today = DateTime.Today;
+            var age = today.Year - birthdate.Year;
+            //Console.WriteLine(age);
+            if (birthdate > today.AddYears(-age))
+                age--;
+            return age >= 18;
         }
     
         public override string ToString() => string.Format(
