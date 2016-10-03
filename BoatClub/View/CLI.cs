@@ -30,6 +30,14 @@ namespace BoatClub.View
             }
         }
 
+        public void DisplayMemberListCompact(List<Member> memberList)
+        {
+            foreach (var m in memberList)
+            {
+                DisplayMemberCompact(m);
+            }
+        }
+
         private void DisplayMemberCompact(Member m)
         {
             Console.WriteLine(
@@ -65,6 +73,7 @@ namespace BoatClub.View
             Console.WriteLine("Examples of valid commands:");
             Console.WriteLine("create_member Sven 550101-0000");
             Console.WriteLine("list_members_VL");
+            Console.WriteLine("list_members_CL");
             Console.WriteLine();
             Console.ResetColor();
         }
