@@ -7,7 +7,7 @@ namespace BoatClub.Model
 {
     public class Member
     {
-        private static int _id; // TODO check
+        //private static int _id; // TODO check
         private string _name;
         private string _personalNumber;
 
@@ -26,7 +26,7 @@ namespace BoatClub.Model
             }
         }
 
-        public string MemberId { get; set; }
+        public string MemberId { get; private set; }
 
         public string PersonalNumber
         {
