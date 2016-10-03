@@ -29,7 +29,7 @@ namespace BoatClub.View
                 Console.WriteLine("Name: ", m.Name);
                 Console.WriteLine("Member ID: ", m.MemberId);
                 Console.WriteLine("Personal number: ", m.PersonalNumber);
-                Console.WriteLine("Boats: ", m.Boats.Count);
+                Console.WriteLine("Boats: ", m.Boats.Count);    // TODO: List boat details instead
             }
         }
 
