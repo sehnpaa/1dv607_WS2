@@ -40,6 +40,7 @@ namespace BoatClub.Controller
                             string name = _args[0];
                             string personalNumber = _args[1];
 
+                            // TODO get ID and send in argument to new member!
                             Member member = new Member(name, personalNumber);
 
                             _registry.SaveMember(member);
