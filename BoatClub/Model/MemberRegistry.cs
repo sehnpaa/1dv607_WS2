@@ -5,61 +5,10 @@ namespace BoatClub.Model
 {
     class MemberRegistry
     {
-
-        public List<MemberListVerboseItem> GetMemberListVerbose()
-        {
-            List<Member> memberList = XML.GetMemberListFromXMLFile();
-            List<MemberListVerboseItem> memberListVerbose = new List<MemberListVerboseItem>();
-            
-            memberList.ForEach(delegate(Member member)
-            {
-                MemberListVerboseItem memberListVerboseItem = new MemberListVerboseItem()
-                {
-                    Name = member.Name,
-                    MemberID = member.MemberId,
-                    PersonalNumber = member.PersonalNumber,
-                    Boats = member.Boats
-                };
-
-                memberListVerbose.Add(memberListVerboseItem);
-            });
-
-
-            return memberListVerbose;
-        }
-
-        public List<MemberListCompactItem> GetMemberListCompact() 
-        {
-            List<Member> memberList = XML.GetMemberListFromXMLFile();
-            List<MemberListCompactItem> memberListCompact = new List<MemberListCompactItem>();
-
-            memberList.ForEach(delegate (Member member)
-            {
-                MemberListCompactItem memberListVerboseItem = new MemberListCompactItem()
-                {
-                    Name = member.Name,
-                    MemberID = member.MemberId,
-                    NumberOfBoats = member.Boats.Count
-                };
-
-                memberListCompact.Add(memberListVerboseItem);
-            });
-
-
-            return memberListCompact;
-        }
-
         public List<Member> GetMemberList()
         {
-            try
-            {
-                List<Member> memberList = XML.GetMemberListFromXMLFile();
-                return memberList;
-            } catch(Exception e)
-            {
-                Console.WriteLine("Det fanns ingen membersList fil att hämta, därför returneras en ny lista. MemberRegistry:60");
-                return new List<Member>();
-            }
+            List<Member> memberList = XML.GetMemberListFromXMLFile();
+            return memberList;
 
         } 
 
@@ -75,16 +24,14 @@ namespace BoatClub.Model
             SaveMemberList(memberList);
         }
 
-        [Obsolete("Please use MemberRegistry.SaveMember instead")]
-        public void Register(String name)
+        public String GetNextMemberId()
         {
-
+            return "5";
         }
 
-        [Obsolete("Please use MemberRegistry.GetMemberListVerbose instead")]
-        public String GetMembersVl()
+        public Member GetMemberById(string id)
         {
-            return XML.load();
+            return new Member("Dummy member in MemberRegistry", "101010-0101", "9");  // TODO: Get actual member
         }
 
     }

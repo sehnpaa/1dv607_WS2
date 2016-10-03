@@ -19,12 +19,22 @@ namespace BoatClub.Model
 
         public static List<Member> GetMemberListFromXMLFile()
         {
-            XmlSerializer reader = new XmlSerializer(typeof(List<Member>));
-            StreamReader file = new StreamReader(MemberListXMLPath);
-            List<Member> memberList = (List<Member>)reader.Deserialize(file);
-            file.Close();
+            try
+            {
+                XmlSerializer reader = new XmlSerializer(typeof(List<Member>));
+                StreamReader file = new StreamReader(MemberListXMLPath);
+                List<Member> memberList = (List<Member>)reader.Deserialize(file);
+                file.Close();
 
-            return memberList;
+                return memberList;
+            } catch(FileNotFoundException)
+            {
+                return new List<Member>();
+            } catch (Exception e)
+            {
+                throw e;
+            }
+
         }
 
         [Obsolete("Please use GetMemberListFromXMLFile instead.")]

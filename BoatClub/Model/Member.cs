@@ -26,7 +26,7 @@ namespace BoatClub.Model
             }
         }
 
-        public string MemberId { get; }
+        public string MemberId { get; set; }
 
         public string PersonalNumber
         {
