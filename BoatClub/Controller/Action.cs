@@ -20,7 +20,8 @@ namespace BoatClub.Controller
             {"create_member", 2},
             {"info_member", 1},
             {"list_members_VL", 0},
-            {"list_members_CL", 0}
+            {"list_members_CL", 0},
+            {"help", 0}
         };
 
         public Action(string input, MemberRegistry registry, CLI cli)
@@ -53,6 +54,9 @@ namespace BoatClub.Controller
                     case "info_member":
                         string id = _args[0];
                         _cli.DisplayMember(_registry.GetMemberById(id));
+                        break;
+                    case "help":
+                        _cli.DisplayListOfCommands(_validNumberOfArgs);
                         break;
                     default:
                         break;

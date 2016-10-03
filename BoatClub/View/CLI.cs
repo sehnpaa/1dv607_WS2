@@ -38,6 +38,16 @@ namespace BoatClub.View
             }
         }
 
+        public void DisplayListOfCommands(Dictionary<string, int> commands)
+        {
+            Console.WriteLine("");
+            foreach (var command in commands)
+            {
+                Console.WriteLine($"{command.Key}");
+            }
+            Console.WriteLine("");
+        }
+
         private void DisplayMemberCompact(Member m)
         {
             Console.WriteLine(
