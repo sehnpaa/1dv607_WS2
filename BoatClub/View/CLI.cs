@@ -17,7 +17,7 @@ namespace BoatClub.View
             this.model = model;
             DisplayApplicationHeader();
         }
-        public void update(string output)
+        public void Display(string output)
         {
             Console.WriteLine(output);
         }

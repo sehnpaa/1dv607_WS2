@@ -47,7 +47,7 @@ namespace BoatClub.Controller
 
                         _registry.SaveMember(member);
 
-                        _cli.update(member.ToString());
+                        _cli.Display(member.ToString());
                     } catch (Exception e)
                     {
                         Console.WriteLine(e);
