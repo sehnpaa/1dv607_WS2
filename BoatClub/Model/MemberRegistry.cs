@@ -87,5 +87,10 @@ namespace BoatClub.Model
             return XML.load();
         }
 
+        public String GetNextMemberId()
+        {
+            return "5";
+        }
+
     }
 }
