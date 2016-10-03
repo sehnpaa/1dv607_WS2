@@ -51,8 +51,16 @@ namespace BoatClub.Model
 
         public List<Member> GetMemberList()
         {
-            List<Member> memberList = XML.GetMemberListFromXMLFile();
-            return memberList;
+            try
+            {
+                List<Member> memberList = XML.GetMemberListFromXMLFile();
+                return memberList;
+            } catch(Exception e)
+            {
+                Console.WriteLine("Det fanns ingen membersList fil att hämta, därför returneras en ny lista. MemberRegistry:60");
+                return new List<Member>();
+            }
+
         } 
 
         public void SaveMemberList(List<Member> memberList)

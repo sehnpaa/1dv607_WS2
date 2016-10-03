@@ -15,7 +15,7 @@ namespace BoatClub.Controller
 
         private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>()
         {
-            {"create_member", 1}
+            {"create_member", 2}
         };
 
         public Action(string input, MemberRegistry registry)
@@ -32,7 +32,19 @@ namespace BoatClub.Controller
                 case "create_member":
                     if (_validNumberOfArgs[_command] == _args.Count)
                     {
-                        _registry.Register(_args[0]);
+                        try
+                        {
+                            string name = _args[0];
+                            string personalNumber = _args[1];
+
+                            Member member = new Member(name, personalNumber);
+
+                            _registry.SaveMember(member);
+                        } catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+
                     }
                     break;
                 default:
