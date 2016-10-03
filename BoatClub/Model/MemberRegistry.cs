@@ -60,7 +60,14 @@ namespace BoatClub.Model
             XML.SaveMemberListToXMLFile(memberList);
         }
 
+        public void SaveMember(Member member)
+        {
+            List<Member> memberList = GetMemberList();
+            memberList.Add(member);
+            SaveMemberList(memberList);
+        }
 
+        [Obsolete("Please use MemberRegistry.SaveMember instead")]
         public void Register(String name)
         {
 
