@@ -31,18 +31,6 @@ namespace BoatClub.Model
             SaveMemberList(memberList);
         }
 
-        [Obsolete("Please use MemberRegistry.SaveMember instead")]
-        public void Register(String name)
-        {
-
-        }
-
-        [Obsolete("Please use MemberRegistry.GetMemberListVerbose instead")]
-        public String GetMembersVl()
-        {
-            return XML.load();
-        }
-
         public String GetNextMemberId()
         {
             return "5";
