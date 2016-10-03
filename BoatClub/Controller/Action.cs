@@ -30,26 +30,27 @@ namespace BoatClub.Controller
 
         public void Call()
         {
+            if (_validNumberOfArgs[_command] != _args.Count)
+            {
+                return;
+            }
             switch (_command)
             {
                 case "create_member":
-                    if (_validNumberOfArgs[_command] == _args.Count)
+                    try
                     {
-                        try
-                        {
-                            string name = _args[0];
-                            string personalNumber = _args[1];
+                        string name = _args[0];
+                        string personalNumber = _args[1];
 
-                            // TODO get ID and send in argument to new member!
-                            Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
+                        // TODO get ID and send in argument to new member!
+                        Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
 
-                            _registry.SaveMember(member);
+                        _registry.SaveMember(member);
 
-                            _cli.update(member.ToString());
-                        } catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
+                        _cli.update(member.ToString());
+                    } catch (Exception e)
+                    {
+                        Console.WriteLine(e);
                     }
                     break;
                 default:
