@@ -17,9 +17,9 @@ namespace BoatClub.View
             this.model = model;
             DisplayApplicationHeader();
         }
-        public void update()
+        public void update(string output)
         {
-            Console.WriteLine("vy uppdatering: " + model.GetMembersVl());
+            Console.WriteLine(output);
         }
 
         private void DisplayApplicationHeader()

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BoatClub.Model;
+using BoatClub.View;
 
 namespace BoatClub.Controller
 {
     class Action
     {
         private readonly MemberRegistry _registry;
+        private readonly CLI _cli;
 
         private string _command;
         private List<String> _args;
@@ -18,9 +20,10 @@ namespace BoatClub.Controller
             {"create_member", 2}
         };
 
-        public Action(string input, MemberRegistry registry)
+        public Action(string input, MemberRegistry registry, CLI cli)
         {
             _registry = registry;
+            _cli = cli;
             SetCommand(input);
             SetArgs(input);
         }
@@ -40,6 +43,8 @@ namespace BoatClub.Controller
                             Member member = new Member(name, personalNumber);
 
                             _registry.SaveMember(member);
+
+                            _cli.update(member.ToString());
                         } catch (Exception e)
                         {
                             Console.WriteLine(e);
