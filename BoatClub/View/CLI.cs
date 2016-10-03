@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 using BoatClub.Model;
@@ -13,24 +14,43 @@ namespace BoatClub.View
 
         public CLI(MemberRegistry model)
         {
-            // TODO: Complete member initialization
             this.model = model;
             DisplayApplicationHeader();
         }
-        public void Display(string output)
+        public void DisplayMember(Member member)
         {
-            Console.WriteLine(output);
+            DisplayMemberCompact(member);
         }
 
         public void DisplayMemberListVerbose(List<Member> memberList)
         {
             foreach (var m in memberList)
             {
-                Console.WriteLine("Name: ", m.Name);
-                Console.WriteLine("Member ID: ", m.MemberId);
-                Console.WriteLine("Personal number: ", m.PersonalNumber);
-                Console.WriteLine("Boats: ", m.Boats.Count);    // TODO: List boat details instead
+                DisplayMemberVerbose(m);
             }
+        }
+
+        private void DisplayMemberCompact(Member m)
+        {
+            Console.WriteLine(
+                string.Format($"\nMember: {m.Name} " + $"\nID: {m.MemberId} " + $"\nNumber of Boats: {m.Boats.Count}"));
+        }
+
+        private void DisplayMemberVerbose(Member m)
+        {
+            Console.WriteLine("Name: ", m.Name);
+            Console.WriteLine("Member ID: ", m.MemberId);
+            Console.WriteLine("Personal number: ", m.PersonalNumber);
+            foreach (var b in m.Boats)
+            {
+                DisplayBoat(b);
+            }
+        }
+
+        private void DisplayBoat(Boat b)
+        {
+            Console.WriteLine("\tBoat type: ", b.BoatType);
+            Console.WriteLine("\tBoat length: ", b.BoatLength);
         }
 
         private void DisplayApplicationHeader()
