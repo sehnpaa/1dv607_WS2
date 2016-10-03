@@ -18,7 +18,7 @@ namespace BoatClub
             try
             {
                 // PersonalNumber of format: yyMMdd" or "yyyyMMdd:
-                var testMember = new Member("Ulrica Skarin", "19720623-0000");
+                var testMember = new Member("Ulrica Skarin", "19720623-0000", "1");
                 testMember.AddBoat(new Boat(BoatType.KayakOrCanoe, 1500));
                 testMember.AddBoat(new Boat(BoatType.MotorSailer, 2500));
                 testMember.AddBoat(new Boat(BoatType.SailBoat, 3700));
