@@ -17,7 +17,8 @@ namespace BoatClub.Controller
 
         private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>()
         {
-            {"create_member", 2}
+            {"create_member", 2},
+            {"list_members_VL", 0}
         };
 
         public Action(string input, MemberRegistry registry, CLI cli)
@@ -42,7 +43,6 @@ namespace BoatClub.Controller
                         string name = _args[0];
                         string personalNumber = _args[1];
 
-                        // TODO get ID and send in argument to new member!
                         Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
 
                         _registry.SaveMember(member);
@@ -52,6 +52,9 @@ namespace BoatClub.Controller
                     {
                         Console.WriteLine(e);
                     }
+                    break;
+                case "list_members_VL":
+                        _cli.DisplayMemberListVerbose(_registry.GetMemberList());
                     break;
                 default:
                     break;

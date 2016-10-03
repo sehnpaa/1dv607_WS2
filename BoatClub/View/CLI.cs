@@ -22,6 +22,17 @@ namespace BoatClub.View
             Console.WriteLine(output);
         }
 
+        public void DisplayMemberListVerbose(List<Member> memberList)
+        {
+            foreach (var m in memberList)
+            {
+                Console.WriteLine("Name: ", m.Name);
+                Console.WriteLine("Member ID: ", m.MemberId);
+                Console.WriteLine("Personal number: ", m.PersonalNumber);
+                Console.WriteLine("Boats: ", m.Boats.Count);
+            }
+        }
+
         private void DisplayApplicationHeader()
         {
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
@@ -33,6 +44,7 @@ namespace BoatClub.View
             Console.WriteLine();
             Console.WriteLine("Examples of valid commands:");
             Console.WriteLine("create_member Sven 550101-0000");
+            Console.WriteLine("list_members_VL");
             Console.WriteLine();
             Console.ResetColor();
         }
