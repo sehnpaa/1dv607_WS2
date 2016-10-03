@@ -38,9 +38,9 @@ namespace BoatClub.View
 
         private void DisplayMemberVerbose(Member m)
         {
-            Console.WriteLine("Name: ", m.Name);
-            Console.WriteLine("Member ID: ", m.MemberId);
-            Console.WriteLine("Personal number: ", m.PersonalNumber);
+            Console.WriteLine("Name: " + m.Name);
+            Console.WriteLine("Member ID: " + m.MemberId);
+            Console.WriteLine("Personal number: " + m.PersonalNumber);
             foreach (var b in m.Boats)
             {
                 DisplayBoat(b);
@@ -49,8 +49,8 @@ namespace BoatClub.View
 
         private void DisplayBoat(Boat b)
         {
-            Console.WriteLine("\tBoat type: ", b.BoatType);
-            Console.WriteLine("\tBoat length: ", b.BoatLength);
+            Console.WriteLine("\tBoat type: " + b.BoatType);
+            Console.WriteLine("\tBoat length: " + b.BoatLength);
         }
 
         private void DisplayApplicationHeader()
