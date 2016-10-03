@@ -266,3 +266,6 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+
+# XML file for saving members
+memberList.xml
