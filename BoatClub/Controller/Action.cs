@@ -40,20 +40,7 @@ namespace BoatClub.Controller
             switch (_command)
             {
                 case "create_member":
-                    try
-                    {
-                        string name = _args[0];
-                        string personalNumber = _args[1];
-
-                        Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
-
-                        _registry.SaveMember(member);
-
-                        _cli.DisplayMember(member);
-                    } catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                    }
+                    CreateMember();
                     break;
                 case "list_members_VL":
                         _cli.DisplayMemberListVerbose(_registry.GetMemberList());
@@ -65,10 +52,29 @@ namespace BoatClub.Controller
                     string id = _args[0];
                     _cli.DisplayMember(_registry.GetMemberById(id));
                     break;
-                default:
+                default: 
                     break;
             }
         }
+
+        private void CreateMember()
+        {
+            try
+            {
+                string name = _args[0];
+                string personalNumber = _args[1];
+
+                Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
+
+                _registry.SaveMember(member);
+                _cli.DisplayMember(member);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         private void SetCommand(String s)
         {
             _command = s.Trim().Split(' ').First();
