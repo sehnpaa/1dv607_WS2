@@ -39,7 +39,7 @@ namespace BoatClub.Model
                 }
                 if (IsPersonalNumberValid(value) == false)
                 {
-                    throw new ArgumentException(nameof(value));
+                    throw new ArgumentException("Please enter a valid personal number: YYYYMMDD-XXXX");
                 }
                 _personalNumber = value;
             }
