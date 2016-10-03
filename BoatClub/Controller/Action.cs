@@ -44,7 +44,6 @@ namespace BoatClub.Controller
                         {
                             Console.WriteLine(e);
                         }
-
                     }
                     break;
                 default:
