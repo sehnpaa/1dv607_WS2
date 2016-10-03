@@ -33,27 +33,36 @@ namespace BoatClub.Controller
 
         public void Call()
         {
-            if (_validNumberOfArgs[_command] != _args.Count)
+            try
             {
-                return;
-            }
-            switch (_command)
-            {
-                case "create_member":
-                    CreateMember();
-                    break;
-                case "list_members_VL":
+                if (_validNumberOfArgs[_command] != _args.Count)
+                {
+                    return;
+                }
+                switch (_command)
+                {
+                    case "create_member":
+                        CreateMember();
+                        break;
+                    case "list_members_VL":
                         _cli.DisplayMemberListVerbose(_registry.GetMemberList());
-                    break;
-                case "list_members_CL":
-                    _cli.DisplayMemberListCompact(_registry.GetMemberList());
-                    break;
-                case "info_member":
-                    string id = _args[0];
-                    _cli.DisplayMember(_registry.GetMemberById(id));
-                    break;
-                default: 
-                    break;
+                        break;
+                    case "list_members_CL":
+                        _cli.DisplayMemberListCompact(_registry.GetMemberList());
+                        break;
+                    case "info_member":
+                        string id = _args[0];
+                        _cli.DisplayMember(_registry.GetMemberById(id));
+                        break;
+                    default:
+                        break;
+                }
+            } catch (KeyNotFoundException)
+            {
+                Console.WriteLine("Command is not supported. Write help to get list of commands.");
+            } catch (Exception e)
+            {
+                throw e;
             }
         }
 
