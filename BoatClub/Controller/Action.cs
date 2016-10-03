@@ -18,6 +18,7 @@ namespace BoatClub.Controller
         private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>()
         {
             {"create_member", 2},
+            {"info_member", 1},
             {"list_members_VL", 0},
             {"list_members_CL", 0}
         };
@@ -59,6 +60,10 @@ namespace BoatClub.Controller
                     break;
                 case "list_members_CL":
                     _cli.DisplayMemberListCompact(_registry.GetMemberList());
+                    break;
+                case "info_member":
+                    string id = _args[0];
+                    _cli.DisplayMember(_registry.GetMemberById(id));
                     break;
                 default:
                     break;

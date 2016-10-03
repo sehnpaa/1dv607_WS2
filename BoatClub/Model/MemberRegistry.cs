@@ -29,5 +29,10 @@ namespace BoatClub.Model
             return "5";
         }
 
+        public Member GetMemberById(string id)
+        {
+            return new Member("Dummy member in MemberRegistry", "101010-0101", "9");  // TODO: Get actual member
+        }
+
     }
 }
