@@ -14,27 +14,17 @@ namespace BoatClub
     {
         static void Main(string[] args)
         {
-            // TODO: Get rid of when live. Testing purposes.
             try
             {
-                // PersonalNumber of format: yyMMdd" or "yyyyMMdd:
-                var testMember = new Member("Ulrica Skarin", "19720623-0000", "1");
-                //testMember.MemberId = "23";
-                testMember.AddBoat(new Boat(BoatType.KayakOrCanoe, 1500));
-                testMember.AddBoat(new Boat(BoatType.MotorSailer, 2500));
-                testMember.AddBoat(new Boat(BoatType.SailBoat, 3700));
-                Console.WriteLine(testMember.ToString("VL")); // -> Verbose info for ONE member
-                Console.WriteLine(testMember.ToString("CL")); // -> Compact info for ONE member
+                var registry = new MemberRegistry();
+                var cli = new CLI(registry);
+                var inputListener = new InputListener(registry, cli);
+                inputListener.TakeInput();
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine($"Sorry! An error occurred: {e}");
             }
-
-            var registry = new MemberRegistry();
-            var cli = new CLI(registry);
-            var inputListener = new InputListener(registry, cli);
-            inputListener.TakeInput();
         }
     }
 }
