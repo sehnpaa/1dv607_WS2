@@ -49,14 +49,11 @@ namespace BoatClub.Model
         {
         }
 
-        public Member(string name, string pNumber) : this()
+        public Member(string name, string personalNumber, string id) : this()
         {
-            // TODO implement correct ID:
-            _id++;
-            MemberId = _id.ToString();
-
             Name = name;
-            PersonalNumber = pNumber;
+            PersonalNumber = personalNumber;
+            MemberId = id;
         }
 
         internal void AddBoat(Boat boat)
