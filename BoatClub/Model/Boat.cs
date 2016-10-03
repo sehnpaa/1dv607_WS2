@@ -26,13 +26,13 @@ namespace BoatClub.Model
             
         }
 
-        public Boat(BoatType boatType, double length) : this()
+        public Boat(BoatType boatType, double lengthInMeters) : this()
         {
             BoatType = boatType;
-            BoatLength = length;
+            BoatLength = lengthInMeters;
         }
 
-        public override string ToString() => string.Format($"{BoatType}, {BoatLength} cm ");
+        public override string ToString() => string.Format($"{BoatType}, {BoatLength} m ");
 
     }
 }
