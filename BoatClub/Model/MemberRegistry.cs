@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Channels;
 
 namespace BoatClub.Model
 {
@@ -26,7 +27,14 @@ namespace BoatClub.Model
 
         public String GetNextMemberId()
         {
-            return "5";
+            int id = 0;
+            
+            List<Member> memberList = GetMemberList();
+            var lastId = memberList[memberList.Count - 1].MemberId;
+            int.TryParse(lastId, out id);
+            id++;
+
+            return id.ToString();
         }
 
         public Member GetMemberById(string id)
