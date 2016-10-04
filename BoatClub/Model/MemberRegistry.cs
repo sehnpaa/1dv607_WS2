@@ -103,14 +103,20 @@ namespace BoatClub.Model
         public void AddBoat(string memberId, Boat boat)
         {
             List<Member> memberList = GetMemberList();
+            bool found = false;
 
             foreach (Member member in memberList)
             {
                 if (member.MemberId == memberId)
                 {
                     member.Boats.Add(boat);
+                    found = true;
                     break;
                 }
+            }
+            if (!found)
+            {
+                throw new Exception("No member with that id.");
             }
 
             SaveMemberList(memberList);
