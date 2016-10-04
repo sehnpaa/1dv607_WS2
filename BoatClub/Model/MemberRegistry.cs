@@ -39,7 +39,23 @@ namespace BoatClub.Model
 
         public Member GetMemberById(string id)
         {
-            return new Member("Dummy member in MemberRegistry", "101010-0101", "9");  // TODO: Get actual member
+            Member memberToGet = null;
+            List<Member> memberList = GetMemberList();
+            foreach(Member member in memberList)
+            {
+                if (member.MemberId == id)
+                {
+                    memberToGet = member;
+                    break;
+                }
+            }
+
+            if (memberToGet == null)
+            {
+                throw new Exception($"Member with id {id} does not exist.");
+            }
+
+            return memberToGet;
         }
 
     }
