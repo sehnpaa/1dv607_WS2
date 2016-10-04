@@ -64,8 +64,15 @@ namespace BoatClub.Controller
                         _cli.DisplayMemberListCompact(_registry.GetMemberList());
                         break;
                     case "info_member":
-                        string id = _args[0];
-                        _cli.DisplayMember(_registry.GetMemberById(id));
+                        try
+                        {
+                            string id = _args[0];
+                            _cli.DisplayMember(_registry.GetMemberById(id));
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
                         break;
                     case "add_boat":
                         try
