@@ -58,6 +58,25 @@ namespace BoatClub.Model
             return memberToGet;
         }
 
+        //TODO: Test if MemberRegistry.DeleteMemberById is working
+        public void DeleteMemberById(string id)
+        {
+            List<Member> updatedMemberList = new List<Member>();
+            List<Member> memberList = GetMemberList();
+            
+            foreach(Member member in memberList)
+            {
+                if (member.MemberId == id)
+                {
+                    continue;
+                }
+
+                updatedMemberList.Add(member);
+            }
+
+            SaveMemberList(updatedMemberList);
+        }
+
         public void UpdateMember(string memberId, string newName, string newPersonalNumber)
         {
 
