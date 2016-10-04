@@ -57,15 +57,18 @@ namespace BoatClub.View
             Console.WriteLine($"\nName: {m.Name} \nMember ID: {m.MemberId} \nPersonal number: {m.PersonalNumber}" );
             Console.WriteLine(SingleLine);
 
+            int i = 1;
             foreach (var b in m.Boats)
             {
+                Console.Write($"\t{i}. ");
                 DisplayBoat(b);
+                i++;
             }
         }
 
         public void DisplayBoat(Boat b)
         {
-            Console.WriteLine($"\tBoat type: {b.BoatType} \tBoat length: {b.BoatLength}");
+            Console.WriteLine($"Boat type: {b.BoatType} \tBoat length: {b.BoatLength}");
         }
 
         public void DisplayValidCommands()
