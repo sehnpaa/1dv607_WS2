@@ -62,5 +62,10 @@ namespace BoatClub.Model
         {
 
         }
+
+        public string DeleteMember(string memberId)
+        {
+            return "Member was deleted.";
+        }
     }
 }
