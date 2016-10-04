@@ -110,7 +110,7 @@ namespace BoatClub.Controller
                         }
                         break;
                     case "help":
-                        _cli.DisplayListOfCommands(_validNumberOfArgs);
+                        _cli.DisplayValidCommands();
                         break;
                     default:
                         break;
