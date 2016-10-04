@@ -117,7 +117,7 @@ namespace BoatClub.Model
             SaveMemberList(memberList);
         }
 
-        public void UpdateBoat(string memberId, string boatId, string boatType, float length)
+        public void UpdateBoat(string memberId, int boatIndex, string boatType, float length)
         {
 
         }

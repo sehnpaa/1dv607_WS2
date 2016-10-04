@@ -43,6 +43,7 @@ namespace BoatClub.Controller
             {
                 if (_validNumberOfArgs[_command] != _args.Count)
                 {
+                    _cli.Display("Incorrect number of arguments");
                     return;
                 }
                 switch (_command)
@@ -79,9 +80,8 @@ namespace BoatClub.Controller
                         {
                             Boat boat = CreateBoat();
                             string memberId = _args[0];
-                            string boatType = _args[1];
-                            float length = float.Parse(_args[2]);
                             _registry.AddBoat(memberId, boat);
+                            _cli.DisplayBoat(boat);
                         }
                         catch (Exception e)
                         {
@@ -92,10 +92,10 @@ namespace BoatClub.Controller
                         try
                         {
                             string memberId = _args[0];
-                            string boatId = _args[1];
+                            int boatIndex = int.Parse(_args[1]);
                             string boatType = _args[2];
                             float length = float.Parse(_args[3]);
-                            _registry.UpdateBoat(memberId, boatId, boatType, length);
+                            _registry.UpdateBoat(memberId, boatIndex, boatType, length);
                         }
                         catch (Exception e)
                         {
@@ -110,7 +110,7 @@ namespace BoatClub.Controller
                         }
                         break;
                     case "help":
-                        _cli.DisplayListOfCommands(_validNumberOfArgs);
+                        _cli.DisplayValidCommands();
                         break;
                     default:
                         break;
