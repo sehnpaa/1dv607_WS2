@@ -82,6 +82,7 @@ namespace BoatClub.View
             Console.WriteLine();
             Console.WriteLine("Examples of valid commands:");
             Console.WriteLine("create_member Sven 550101-0000");
+            Console.WriteLine("update_member 5 Shven 560101-0000");
             Console.WriteLine("info_member 7");
             Console.WriteLine("list_members_VL");
             Console.WriteLine("list_members_CL");

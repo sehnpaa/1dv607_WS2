@@ -77,5 +77,9 @@ namespace BoatClub.Model
             SaveMemberList(updatedMemberList);
         }
 
+        public void UpdateMember(string memberId, string newName, string newPersonalNumber)
+        {
+
+        }
     }
 }
