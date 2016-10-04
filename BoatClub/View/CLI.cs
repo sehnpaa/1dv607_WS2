@@ -94,6 +94,7 @@ namespace BoatClub.View
             Console.WriteLine("info_member 7");
             Console.WriteLine("list_members_VL");
             Console.WriteLine("list_members_CL");
+            Console.WriteLine("add_boat 5 SailBoat 12.5");
             Console.WriteLine();
             Console.ResetColor();
         }

@@ -59,7 +59,7 @@ namespace BoatClub.Model
         }
 
         //TODO: Test if MemberRegistry.DeleteMemberById is working
-        public void DeleteMemberById(string id)
+        public string DeleteMemberById(string id)
         {
             List<Member> updatedMemberList = new List<Member>();
             List<Member> memberList = GetMemberList();
@@ -75,19 +75,23 @@ namespace BoatClub.Model
             }
 
             SaveMemberList(updatedMemberList);
+
+            return $"Member with id {id} was deleted";
         }
 
         public void UpdateMember(string memberId, string newName, string newPersonalNumber)
         {
-            Member member = GetMemberById(memberId);
-            member.Name = newName;
-            member.PersonalNumber = newPersonalNumber;
-
-            DeleteMemberById(memberId);
-
             List<Member> memberList = GetMemberList();
 
-            memberList.Add(member);
+            foreach(Member member in memberList)
+            {
+                if (member.MemberId == memberId)
+                {
+                    member.Name = newName;
+                    member.PersonalNumber = newPersonalNumber;
+                    break;
+                }
+            }
 
             SaveMemberList(memberList);
         }
@@ -95,6 +99,11 @@ namespace BoatClub.Model
         public string DeleteMember(string memberId)
         {
             return "Member was deleted.";
+        }
+
+        public void AddBoat(string memberId, string boatType, float length)
+        {
+
         }
     }
 }
