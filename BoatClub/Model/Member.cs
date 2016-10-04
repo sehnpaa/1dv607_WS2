@@ -10,7 +10,7 @@ namespace BoatClub.Model
         private string _name;
         private string _personalNumber;
 
-        public DateTime DateOfBirth;
+        public DateTime DateOfBirth { get; }
         public List<Boat> Boats = new List<Boat>();
 
         public string Name
