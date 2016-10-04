@@ -7,10 +7,10 @@ namespace BoatClub.Model
 {
     public class Member
     {
-        //private static int _id; // TODO check
         private string _name;
         private string _personalNumber;
 
+        public DateTime DateOfBirth;
         public List<Boat> Boats = new List<Boat>();
 
         public string Name
@@ -61,54 +61,24 @@ namespace BoatClub.Model
             Boats.Add(boat);
         }
 
-        private static bool IsPersonalNumberValid(string number)
+        private bool IsPersonalNumberValid(string number)
         {
             const string regEx = @"^(?<date>\d{6}|\d{8})[-\s]?\d{4}$";
             var date = Regex.Match(number, regEx).Groups["date"].Value;
-            DateTime dateTime;
 
-            if (DateTime.TryParseExact(date, new[] {"yyMMdd", "yyyyMMdd"},
-                new CultureInfo("sv-SE"), DateTimeStyles.None, out dateTime))
-            {
-                //Console.WriteLine(IsOfLegalAge(dateTime));
-                return true;
-            }
+            Console.WriteLine(date);
 
-            return false;
+            return DateTime.TryParseExact(date, new[] {"yyyyMMdd"},
+                new CultureInfo("sv-SE"), DateTimeStyles.None, out DateOfBirth);
         }
 
-        public static bool IsOfLegalAge(DateTime birthdate)
+        public int GetMemberAge()
         {
             var today = DateTime.Today;
-            var age = today.Year - birthdate.Year;
-            //Console.WriteLine(age);
-            if (birthdate > today.AddYears(-age))
+            var age = today.Year - DateOfBirth.Year;
+            if (DateOfBirth > today.AddYears(-age))
                 age--;
-            return age >= 18;
-        }
-
-        public override string ToString()
-        {
-            return ToString("CL");
-        }
-
-        public string ToString(string format)
-        {
-            string output = "";
-
-            if (format == "CL")
-            {
-                output = string.Format($"\nMember: {Name} " + $"\nID: {MemberId} " + $"\nNumber of Boats: {Boats.Count}");
-            }
-
-            if (format == "VL")
-            {
-                output = string.Format($"\nMember: {Name} " +
-                                       $"\nPersonalNumber: {PersonalNumber} " +
-                                       $"\nID: {MemberId} " +
-                                       $"\nBoats: \n{string.Join("| ", Boats)}\n");
-            }
-            return output;
+            return age;
         }
     }
 }

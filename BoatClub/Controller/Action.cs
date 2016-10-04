@@ -102,8 +102,15 @@ namespace BoatClub.Controller
 
                 Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
 
-                _registry.SaveMember(member);
-                _cli.DisplayMember(member);
+                if (member.GetMemberAge() >= 18)
+                {
+                    _registry.SaveMember(member);
+                    _cli.DisplayMember(member);
+                }
+                else
+                {
+                    throw new Exception("Sorry! You must be of age 18 yrs to become a member.");
+                }
             }
             catch (Exception e)
             {
