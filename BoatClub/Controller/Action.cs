@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using BoatClub.Model;
 using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    class Action
+    internal class Action
     {
         private readonly MemberRegistry _registry;
         private readonly CLI _cli;
 
         private string _command;
-        private List<String> _args;
+        private List<string> _args;
 
         private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>()
         {

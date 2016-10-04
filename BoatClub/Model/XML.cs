@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace BoatClub.Model
 {
-    class XML
+    internal class XML
     {
         private static string MemberListXMLPath = "../../Storage/memberList.xml";
 
@@ -38,7 +38,7 @@ namespace BoatClub.Model
         }
 
         [Obsolete("Please use GetMemberListFromXMLFile instead.")]
-        public static String load()
+        public static string load()
         {
             // Load data
             return "dummy data";

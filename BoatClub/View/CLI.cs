@@ -8,7 +8,7 @@ using BoatClub.Model;
 
 namespace BoatClub.View
 {
-    class CLI
+    internal class CLI
     {
         public static string SingleLine = new string('-', 50);
         public static string DoubleLine = new string('=', 50);

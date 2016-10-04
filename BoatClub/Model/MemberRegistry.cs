@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BoatClub.Model
 {
-    class MemberRegistry
+    internal class MemberRegistry
     {
         public List<Member> GetMemberList()
         {
@@ -24,7 +24,7 @@ namespace BoatClub.Model
             SaveMemberList(memberList);
         }
 
-        public String GetNextMemberId()
+        public string GetNextMemberId()
         {
             int id;
             List<Member> memberList = GetMemberList();
