@@ -43,6 +43,7 @@ namespace BoatClub.Controller
             {
                 if (_validNumberOfArgs[_command] != _args.Count)
                 {
+                    _cli.Display("Incorrect number of arguments");
                     return;
                 }
                 switch (_command)
