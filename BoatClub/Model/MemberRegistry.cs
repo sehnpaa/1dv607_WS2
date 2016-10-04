@@ -110,5 +110,10 @@ namespace BoatClub.Model
         {
 
         }
+
+        public void RemoveBoat(string memberId, string boatId)
+        {
+
+        }
     }
 }

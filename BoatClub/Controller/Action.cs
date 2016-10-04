@@ -25,6 +25,7 @@ namespace BoatClub.Controller
             {"list_members_CL", 0},
             {"add_boat", 3},
             {"update_boat", 4},
+            {"remove_boat", 2},
             {"help", 0}
         };
 
@@ -91,6 +92,13 @@ namespace BoatClub.Controller
                         catch (Exception e)
                         {
                             Console.WriteLine(e);
+                        }
+                        break;
+                    case "remove_boat":
+                        {
+                            string memberId = _args[0];
+                            string boatId = _args[1];
+                            _registry.RemoveBoat(memberId, boatId);
                         }
                         break;
                     case "help":
