@@ -123,7 +123,24 @@ namespace BoatClub.Model
 
         public void RemoveBoat(string memberId, string boatId)
         {
+            List<Member> memberList = GetMemberList();
+            int index;
 
+            int.TryParse(boatId, out index);
+
+            foreach(Member member in memberList)
+            {
+                if (member.MemberId == memberId)
+                {
+                    if (index < 1 || index > member.Boats.Count)
+                    {
+                        throw new ArgumentOutOfRangeException($"Boat index {index} is out of range.");
+                    }
+                    member.Boats.RemoveAt(index - 1);
+                }
+            }
+
+            SaveMemberList(memberList);
         }
     }
 }
