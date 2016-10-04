@@ -97,6 +97,7 @@ namespace BoatClub.Controller
         {
             _command = s.Trim().Split(' ').First();
         }
+
         private void SetArgs(String s)
         {
             _args = s.Trim().Split(' ').Skip(1).ToList();
