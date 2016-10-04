@@ -21,7 +21,7 @@ namespace BoatClub.View
         }
         public void DisplayMember(Member member)
         {
-            DisplayMemberCompact(member);
+            DisplayMemberVerbose(member);
         }
 
         public void DisplayMemberListVerbose(List<Member> memberList)
