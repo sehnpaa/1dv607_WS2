@@ -91,10 +91,10 @@ namespace BoatClub.Controller
                         try
                         {
                             string memberId = _args[0];
-                            string boatId = _args[1];
+                            int boatIndex = int.Parse(_args[1]);
                             string boatType = _args[2];
                             float length = float.Parse(_args[3]);
-                            _registry.UpdateBoat(memberId, boatId, boatType, length);
+                            _registry.UpdateBoat(memberId, boatIndex, boatType, length);
                         }
                         catch (Exception e)
                         {
