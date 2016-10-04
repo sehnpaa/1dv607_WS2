@@ -116,9 +116,22 @@ namespace BoatClub.Model
             SaveMemberList(memberList);
         }
 
-        public void UpdateBoat(string memberId, int boatIndex, string boatType, float length)
+        public void UpdateBoat(string memberId, int boatIndex, string boatTypeInput, float length)
         {
+            List<Member> memberList = GetMemberList();
 
+            foreach(Member member in memberList)
+            {
+                if (member.MemberId == memberId)
+                {
+                    Boat boat = member.Boats[boatIndex - 1];
+                    BoatType boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
+                    boat.BoatType = boatType;
+                    boat.BoatLength = length;
+                }
+            }
+
+            SaveMemberList(memberList);
         }
 
         public void RemoveBoat(string memberId, string boatId)
