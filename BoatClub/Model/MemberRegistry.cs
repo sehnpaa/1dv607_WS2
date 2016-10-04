@@ -91,5 +91,10 @@ namespace BoatClub.Model
 
             SaveMemberList(memberList);
         }
+
+        public string DeleteMember(string memberId)
+        {
+            return "Member was deleted.";
+        }
     }
 }
