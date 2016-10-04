@@ -10,7 +10,8 @@ namespace BoatClub.View
 {
     class CLI
     {
-        const string SingleLine = "-------------------------------";
+        const string SingleLine = "-----------------------------------";
+        const string DoubleLine = "==========================================";
         private MemberRegistry model;
 
         public CLI(MemberRegistry model)
@@ -78,16 +79,17 @@ namespace BoatClub.View
 
         private void DisplayApplicationHeader()
         {
+            Console.Title = "Boat Club";
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Boat Club Version[1.0.0]");
-            Console.WriteLine("2016 C. Trosell, P. Andersson, U. Skarin\n");
+            Console.WriteLine($"2016 C. Trosell, P. Andersson, U. Skarin\n{DoubleLine}");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
-            Console.WriteLine("Examples of valid commands:");
-            Console.WriteLine("create_member Sven 550101-0000");
-            Console.WriteLine("update_member 5 Shven 560101-0000");
+            Console.WriteLine($"Examples of valid commands:\n{SingleLine}");
+            Console.WriteLine("create_member Sven 19550101-0000");
+            Console.WriteLine("update_member 5 Sven 19550101-0000");
             Console.WriteLine("delete_member 5");
             Console.WriteLine("info_member 7");
             Console.WriteLine("list_members_VL");
