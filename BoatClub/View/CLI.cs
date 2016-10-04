@@ -84,8 +84,7 @@ namespace BoatClub.View
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Boat Club Version[1.0.0]");
             Console.WriteLine($"2016 C. Trosell, P. Andersson, U. Skarin\n{DoubleLine}");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ResetColor();
             Console.WriteLine();
             Console.WriteLine($"Examples of valid commands:\n{SingleLine}");
             Console.WriteLine("create_member Sven 19550101-0000");
@@ -98,7 +97,7 @@ namespace BoatClub.View
             Console.WriteLine("update_boat 5 3 Other 11.5");
             Console.WriteLine("remove_boat 5 3");
             Console.WriteLine();
-            Console.ResetColor();
+            
         }
     }
 }
