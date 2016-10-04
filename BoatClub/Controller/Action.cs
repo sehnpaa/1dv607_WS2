@@ -68,10 +68,11 @@ namespace BoatClub.Controller
                     case "add_boat":
                         try
                         {
+                            Boat boat = CreateBoat();
                             string memberId = _args[0];
                             string boatType = _args[1];
                             float length = float.Parse(_args[2]);
-                            _registry.AddBoat(memberId, boatType, length);
+                            _registry.AddBoat(memberId, boat);
                         }
                         catch (Exception e)
                         {
@@ -108,6 +109,26 @@ namespace BoatClub.Controller
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+        }
+
+        private Boat CreateBoat()
+        {
+            try
+            {
+                string boatTypeInput = _args[1];
+                string lengthInMetresInput = _args[2];
+                Double lengthInMetres;
+
+                BoatType boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
+                Double.TryParse(lengthInMetresInput, out lengthInMetres);
+
+                Boat boat = new Boat(boatType, lengthInMetres);
+
+                return boat;
+            } catch (ArgumentException)
+            {
+                throw new Exception($"Boat type '{_args[1]}' does not exist.");
             }
         }
 

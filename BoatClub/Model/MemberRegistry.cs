@@ -101,9 +101,20 @@ namespace BoatClub.Model
             return "Member was deleted.";
         }
 
-        public void AddBoat(string memberId, string boatType, float length)
+        public void AddBoat(string memberId, Boat boat)
         {
+            List<Member> memberList = GetMemberList();
 
+            foreach (Member member in memberList)
+            {
+                if (member.MemberId == memberId)
+                {
+                    member.Boats.Add(boat);
+                    break;
+                }
+            }
+
+            SaveMemberList(memberList);
         }
     }
 }
