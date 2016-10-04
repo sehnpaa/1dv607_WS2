@@ -14,7 +14,7 @@ namespace BoatClub.Controller
         private string _command;
         private List<string> _args;
 
-        private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>()
+        private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>
         {
             {"create_member", 2},
             {"update_member", 3},
@@ -42,7 +42,7 @@ namespace BoatClub.Controller
             {
                 if (_validNumberOfArgs[_command] != _args.Count)
                 {
-                    _cli.Display("Incorrect number of arguments");
+                    _cli.Display("--> Incorrect number of arguments");
                     return;
                 }
                 switch (_command)
@@ -51,11 +51,22 @@ namespace BoatClub.Controller
                         CreateMember();
                         break;
                     case "update_member":
-                        _registry.UpdateMember(_args[0], _args[1], _args[2]);
-                        _cli.DisplayMember(_registry.GetMemberById(_args[0]));
+                        UpdateMember();
                         break;
                     case "delete_member":
                         _cli.Display(_registry.DeleteMemberById(_args[0]));
+                        break;
+                    case "info_member":
+                        GetMemberInfo();
+                        break;
+                    case "add_boat":
+                        AddBoat();
+                        break;
+                    case "update_boat":
+                        UpdateBoat();
+                        break;
+                    case "remove_boat":
+                        RemoveBoat();
                         break;
                     case "list_members_VL":
                         _cli.DisplayMemberListVerbose(_registry.GetMemberList());
@@ -63,84 +74,90 @@ namespace BoatClub.Controller
                     case "list_members_CL":
                         _cli.DisplayMemberListCompact(_registry.GetMemberList());
                         break;
-                    case "info_member":
-                        try
-                        {
-                            string id = _args[0];
-                            _cli.DisplayMember(_registry.GetMemberById(id));
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-                        break;
-                    case "add_boat":
-                        try
-                        {
-                            Boat boat = CreateBoat();
-                            string memberId = _args[0];
-                            _registry.AddBoat(memberId, boat);
-                            _cli.DisplayBoat(boat);
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-                        break;
-                    case "update_boat":
-                        try
-                        {
-                            string memberId = _args[0];
-                            int boatIndex = int.Parse(_args[1]);
-                            string boatType = _args[2];
-                            float length = float.Parse(_args[3]);
-                            _registry.UpdateBoat(memberId, boatIndex, boatType, length);
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-                        break;
-                    case "remove_boat":
-                        {
-                            string memberId = _args[0];
-                            string boatId = _args[1];
-                            _registry.RemoveBoat(memberId, boatId);
-                        }
-                        break;
                     case "help":
                         _cli.DisplayValidCommands();
                         break;
                     default:
                         break;
                 }
-            } catch (KeyNotFoundException)
+            }
+            catch (KeyNotFoundException)
             {
-                Console.WriteLine("Command is not supported. Write help to get list of commands.");
-            } catch (Exception e)
+                Console.WriteLine("--> Command is not supported. Write < help >to get list of commands.");
+            }
+            catch (Exception e)
             {
-                throw e;
+                Console.WriteLine(e);
             }
         }
 
         private void CreateMember()
         {
+            var name = _args[0];
+            var personalNumber = _args[1];
+            var member = new Member(name, personalNumber, _registry.GetNextMemberId());
+
+            if (member.GetMemberAge() < 18)
+            {
+                Console.WriteLine("--> You must be of age 18 to become a member.");
+            }
+            else
+            {
+                _registry.SaveMember(member);
+                _cli.DisplayMember(member);
+            }
+        }
+
+        private void UpdateMember()
+        {
+            _registry.UpdateMember(_args[0], _args[1], _args[2]);
+            _cli.DisplayMember(_registry.GetMemberById(_args[0]));
+        }
+
+        private void RemoveBoat()
+        {
+            var memberId = _args[0];
+            var boatId = _args[1];
+            _registry.RemoveBoat(memberId, boatId);
+        }
+
+        private void GetMemberInfo()
+        {
             try
             {
-                string name = _args[0];
-                string personalNumber = _args[1];
+                var id = _args[0];
+                _cli.DisplayMember(_registry.GetMemberById(id));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 
-                Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
+        private void AddBoat()
+        {
+            try
+            {
+                var boat = CreateBoat();
+                var memberId = _args[0];
+                _registry.AddBoat(memberId, boat);
+                _cli.DisplayBoat(boat);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 
-                if (member.GetMemberAge() >= 18)
-                {
-                    _registry.SaveMember(member);
-                    _cli.DisplayMember(member);
-                }
-                else
-                {
-                    throw new Exception("Sorry! You must be of age 18 yrs to become a member.");
-                }
+        private void UpdateBoat()
+        {
+            try
+            {
+                var memberId = _args[0];
+                var boatIndex = int.Parse(_args[1]);
+                var boatType = _args[2];
+                var length = float.Parse(_args[3]);
+                _registry.UpdateBoat(memberId, boatIndex, boatType, length);
             }
             catch (Exception e)
             {
@@ -153,28 +170,28 @@ namespace BoatClub.Controller
             // TODO: Handle dots and comma input!
             //try
             //{
-                string boatTypeInput = _args[1];
-                string lengthInMetresInput = _args[2];
-                Double lengthInMetres;
+            var boatTypeInput = _args[1];
+            var lengthInMetresInput = _args[2];
+            double lengthInMetres;
 
-                BoatType boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
-                Double.TryParse(lengthInMetresInput, out lengthInMetres);
+            var boatType = (BoatType) Enum.Parse(typeof(BoatType), boatTypeInput);
+            double.TryParse(lengthInMetresInput, out lengthInMetres);
 
-                Boat boat = new Boat(boatType, lengthInMetres);
+            var boat = new Boat(boatType, lengthInMetres);
 
-                return boat;
+            return boat;
             //} catch (ArgumentException)
             //{
             //    throw new Exception($"Boat type '{_args[1]}' does not exist.");
             //}
         }
 
-        private void SetCommand(String s)
+        private void SetCommand(string s)
         {
             _command = s.Trim().Split(' ').First();
         }
 
-        private void SetArgs(String s)
+        private void SetArgs(string s)
         {
             _args = s.Trim().Split(' ').Skip(1).ToList();
         }
