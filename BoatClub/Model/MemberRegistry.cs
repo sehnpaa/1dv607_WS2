@@ -105,5 +105,15 @@ namespace BoatClub.Model
         {
 
         }
+
+        public void UpdateBoat(string memberId, string boatId, string boatType, float length)
+        {
+
+        }
+
+        public void RemoveBoat(string memberId, string boatId)
+        {
+
+        }
     }
 }
