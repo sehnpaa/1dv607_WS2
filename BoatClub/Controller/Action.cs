@@ -24,6 +24,8 @@ namespace BoatClub.Controller
             {"list_members_VL", 0},
             {"list_members_CL", 0},
             {"add_boat", 3},
+            {"update_boat", 4},
+            {"remove_boat", 2},
             {"help", 0}
         };
 
@@ -79,6 +81,27 @@ namespace BoatClub.Controller
                             Console.WriteLine(e);
                         }
                         break;
+                    case "update_boat":
+                        try
+                        {
+                            string memberId = _args[0];
+                            string boatId = _args[1];
+                            string boatType = _args[2];
+                            float length = float.Parse(_args[3]);
+                            _registry.UpdateBoat(memberId, boatId, boatType, length);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+                        break;
+                    case "remove_boat":
+                        {
+                            string memberId = _args[0];
+                            string boatId = _args[1];
+                            _registry.RemoveBoat(memberId, boatId);
+                        }
+                        break;
                     case "help":
                         _cli.DisplayListOfCommands(_validNumberOfArgs);
                         break;
@@ -103,8 +126,15 @@ namespace BoatClub.Controller
 
                 Member member = new Member(name, personalNumber, _registry.GetNextMemberId());
 
-                _registry.SaveMember(member);
-                _cli.DisplayMember(member);
+                if (member.GetMemberAge() >= 18)
+                {
+                    _registry.SaveMember(member);
+                    _cli.DisplayMember(member);
+                }
+                else
+                {
+                    throw new Exception("Sorry! You must be of age 18 yrs to become a member.");
+                }
             }
             catch (Exception e)
             {
