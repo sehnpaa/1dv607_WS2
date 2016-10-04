@@ -10,8 +10,9 @@ namespace BoatClub.View
 {
     class CLI
     {
-        const string SingleLine = "-----------------------------------";
-        const string DoubleLine = "==========================================";
+        static string SingleLine = new string('-', 50);
+        static string DoubleLine = new string('=', 50);
+
         private MemberRegistry model;
 
         public CLI(MemberRegistry model)
