@@ -96,5 +96,10 @@ namespace BoatClub.Model
         {
             return "Member was deleted.";
         }
+
+        public void AddBoat(string memberId, string boatType, float length)
+        {
+
+        }
     }
 }

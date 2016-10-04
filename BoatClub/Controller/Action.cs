@@ -23,6 +23,7 @@ namespace BoatClub.Controller
             {"info_member", 1},
             {"list_members_VL", 0},
             {"list_members_CL", 0},
+            {"add_boat", 3},
             {"help", 0}
         };
 
@@ -63,6 +64,19 @@ namespace BoatClub.Controller
                     case "info_member":
                         string id = _args[0];
                         _cli.DisplayMember(_registry.GetMemberById(id));
+                        break;
+                    case "add_boat":
+                        try
+                        {
+                            string memberId = _args[0];
+                            string boatType = _args[1];
+                            float length = float.Parse(_args[2]);
+                            _registry.AddBoat(memberId, boatType, length);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
                         break;
                     case "help":
                         _cli.DisplayListOfCommands(_validNumberOfArgs);
