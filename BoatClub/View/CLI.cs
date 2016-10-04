@@ -73,7 +73,7 @@ namespace BoatClub.View
             }
         }
 
-        private void DisplayBoat(Boat b)
+        public void DisplayBoat(Boat b)
         {
             Console.WriteLine($"\tBoat type: {b.BoatType} \tBoat length: {b.BoatLength}");
         }

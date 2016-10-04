@@ -80,6 +80,7 @@ namespace BoatClub.Controller
                             Boat boat = CreateBoat();
                             string memberId = _args[0];
                             _registry.AddBoat(memberId, boat);
+                            _cli.DisplayBoat(boat);
                         }
                         catch (Exception e)
                         {
