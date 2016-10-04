@@ -16,6 +16,7 @@ namespace BoatClub
         {
             try
             {
+                // Test comment just to fix.
                 var registry = new MemberRegistry();
                 var cli = new CLI(registry);
                 var inputListener = new InputListener(registry, cli);
