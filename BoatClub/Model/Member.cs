@@ -9,8 +9,8 @@ namespace BoatClub.Model
     {
         private string _name;
         private string _personalNumber;
+        private DateTime _dateOfBirth;
 
-        public DateTime DateOfBirth { get; }
         public List<Boat> Boats = new List<Boat>();
 
         public string Name
@@ -45,6 +45,12 @@ namespace BoatClub.Model
             }
         }
 
+        public DateTime DateOfBirth
+        {
+            get { return _dateOfBirth; }
+            set { _dateOfBirth = value; }
+        }
+
         public Member()
         {
         }
@@ -67,7 +73,7 @@ namespace BoatClub.Model
             var date = Regex.Match(number, regEx).Groups["date"].Value;
 
             return DateTime.TryParseExact(date, new[] {"yyyyMMdd"},
-                new CultureInfo("sv-SE"), DateTimeStyles.None, out DateOfBirth);
+                new CultureInfo("sv-SE"), DateTimeStyles.None, out _dateOfBirth);
         }
 
         public int GetMemberAge()
