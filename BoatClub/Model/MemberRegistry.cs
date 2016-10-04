@@ -42,5 +42,9 @@ namespace BoatClub.Model
             return new Member("Dummy member in MemberRegistry", "101010-0101", "9");  // TODO: Get actual member
         }
 
+        public void UpdateMember(string memberId, string newName, string newPersonalNumber)
+        {
+
+        }
     }
 }

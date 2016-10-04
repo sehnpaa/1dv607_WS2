@@ -18,7 +18,8 @@ namespace BoatClub.Controller
         private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>()
         {
             {"create_member", 2},
-            {"info_member", 1},
+            {"update_member", 3},
+            { "info_member", 1},
             {"list_members_VL", 0},
             {"list_members_CL", 0},
             {"help", 0}
@@ -44,6 +45,10 @@ namespace BoatClub.Controller
                 {
                     case "create_member":
                         CreateMember();
+                        break;
+                    case "update_member":
+                        _registry.UpdateMember(_args[0], _args[1], _args[2]);
+                        _cli.DisplayMember(_registry.GetMemberById(_args[0]));
                         break;
                     case "list_members_VL":
                         _cli.DisplayMemberListVerbose(_registry.GetMemberList());
