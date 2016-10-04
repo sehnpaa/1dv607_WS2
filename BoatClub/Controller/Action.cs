@@ -151,8 +151,9 @@ namespace BoatClub.Controller
 
         private Boat CreateBoat()
         {
-            try
-            {
+            // TODO: Handle dots and comma input!
+            //try
+            //{
                 string boatTypeInput = _args[1];
                 string lengthInMetresInput = _args[2];
                 Double lengthInMetres;
@@ -163,10 +164,10 @@ namespace BoatClub.Controller
                 Boat boat = new Boat(boatType, lengthInMetres);
 
                 return boat;
-            } catch (ArgumentException)
-            {
-                throw new Exception($"Boat type '{_args[1]}' does not exist.");
-            }
+            //} catch (ArgumentException)
+            //{
+            //    throw new Exception($"Boat type '{_args[1]}' does not exist.");
+            //}
         }
 
         private void SetCommand(String s)
