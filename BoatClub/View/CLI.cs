@@ -10,6 +10,7 @@ namespace BoatClub.View
 {
     class CLI
     {
+        const string SingleLine = "-------------------------------";
         private MemberRegistry model;
 
         public CLI(MemberRegistry model)
@@ -56,14 +57,14 @@ namespace BoatClub.View
         private void DisplayMemberCompact(Member m)
         {
             Console.WriteLine(
-                string.Format($"\nMember: {m.Name} " + $"\nID: {m.MemberId} " + $"\nNumber of Boats: {m.Boats.Count}"));
+                string.Format($"\nMember: {m.Name} \nID: {m.MemberId} \nNumber of Boats: {m.Boats.Count}\n{SingleLine}"));
         }
 
         private void DisplayMemberVerbose(Member m)
         {
-            Console.WriteLine("Name: " + m.Name);
-            Console.WriteLine("Member ID: " + m.MemberId);
-            Console.WriteLine("Personal number: " + m.PersonalNumber);
+            Console.WriteLine($"\nName: {m.Name} \nMember ID: {m.MemberId} \nPersonal number: {m.PersonalNumber}" );
+            Console.WriteLine(SingleLine);
+
             foreach (var b in m.Boats)
             {
                 DisplayBoat(b);
@@ -72,8 +73,7 @@ namespace BoatClub.View
 
         private void DisplayBoat(Boat b)
         {
-            Console.WriteLine("\tBoat type: " + b.BoatType);
-            Console.WriteLine("\tBoat length: " + b.BoatLength);
+            Console.WriteLine($"\tBoat type: {b.BoatType} \tBoat length: {b.BoatLength}");
         }
 
         private void DisplayApplicationHeader()
