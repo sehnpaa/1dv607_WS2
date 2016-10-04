@@ -79,7 +79,17 @@ namespace BoatClub.Model
 
         public void UpdateMember(string memberId, string newName, string newPersonalNumber)
         {
+            Member member = GetMemberById(memberId);
+            member.Name = newName;
+            member.PersonalNumber = newPersonalNumber;
 
+            DeleteMemberById(memberId);
+
+            List<Member> memberList = GetMemberList();
+
+            memberList.Add(member);
+
+            SaveMemberList(memberList);
         }
     }
 }
