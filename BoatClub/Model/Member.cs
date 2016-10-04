@@ -66,8 +66,6 @@ namespace BoatClub.Model
             const string regEx = @"^(?<date>\d{6}|\d{8})[-\s]?\d{4}$";
             var date = Regex.Match(number, regEx).Groups["date"].Value;
 
-            Console.WriteLine(date);
-
             return DateTime.TryParseExact(date, new[] {"yyyyMMdd"},
                 new CultureInfo("sv-SE"), DateTimeStyles.None, out DateOfBirth);
         }
