@@ -52,7 +52,7 @@ namespace BoatClub.Controller
                         _cli.DisplayMember(_registry.GetMemberById(_args[0]));
                         break;
                     case "delete_member":
-                        _cli.Display(_registry.DeleteMember(_args[0]));
+                        _cli.Display(_registry.DeleteMemberById(_args[0]));
                         break;
                     case "list_members_VL":
                         _cli.DisplayMemberListVerbose(_registry.GetMemberList());
