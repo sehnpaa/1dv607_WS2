@@ -187,17 +187,18 @@ namespace BoatClub.Controller
 
         private void UpdateBoat()
         {
-            try
+            var memberId = _args[0];
+            var boatIndex = int.Parse(_args[1]);
+            var boatType = _args[2];
+
+            if (Enum.IsDefined(typeof(BoatType), boatType))
             {
-                var memberId = _args[0];
-                var boatIndex = int.Parse(_args[1]);
-                var boatType = _args[2];
                 var length = float.Parse(_args[3]);
                 _registry.UpdateBoat(memberId, boatIndex, boatType, length);
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
+                throw new Exception("You have entered an invalid type of boat.");
             }
         }
 
