@@ -16,15 +16,15 @@ namespace BoatClub.Controller
 
         private readonly Dictionary<string, int> _validNumberOfArgs = new Dictionary<string, int>
         {
-            {"create_member", 2},
-            {"update_member", 3},
-            {"delete_member", 1},
-            {"info_member", 1},
-            {"list_members_VL", 0},
-            {"list_members_CL", 0},
-            {"add_boat", 3},
-            {"update_boat", 4},
-            {"remove_boat", 2},
+            {"add-member", 2},
+            {"update-member", 3},
+            {"delete-member", 1},
+            {"list-member", 1},
+            {"list-members-VL", 0},
+            {"list-members-CL", 0},
+            {"add-boat", 3},
+            {"update-boat", 4},
+            {"remove-boat", 2},
             {"help", 0}
         };
 
@@ -47,31 +47,36 @@ namespace BoatClub.Controller
                 }
                 switch (_command)
                 {
-                    case "create_member":
-                        CreateMember();
+                    case "add-member":
+                        AddMember();
                         break;
-                    case "update_member":
+                    case "update-member":
                         UpdateMember();
                         break;
+<<<<<<< HEAD
                     case "delete_member":
                         DeleteMember();
+=======
+                    case "delete-member":
+                        _cli.Display(_registry.DeleteMemberById(_args[0]));
+>>>>>>> 685a652bbff457860c957a3a4d4807afbde5f4d8
                         break;
-                    case "info_member":
-                        GetMemberInfo();
+                    case "list-member":
+                        ListMember();
                         break;
-                    case "add_boat":
+                    case "add-boat":
                         AddBoat();
                         break;
-                    case "update_boat":
+                    case "update-boat":
                         UpdateBoat();
                         break;
-                    case "remove_boat":
+                    case "remove-boat":
                         RemoveBoat();
                         break;
-                    case "list_members_VL":
+                    case "list-members-VL":
                         _cli.DisplayMemberListVerbose(_registry.GetMemberList());
                         break;
-                    case "list_members_CL":
+                    case "list-members-CL":
                         _cli.DisplayMemberListCompact(_registry.GetMemberList());
                         break;
                     case "help":
@@ -91,7 +96,7 @@ namespace BoatClub.Controller
             }
         }
 
-        private void CreateMember()
+        private void AddMember()
         {
             var name = _args[0];
             var personalNumber = _args[1];
@@ -121,7 +126,7 @@ namespace BoatClub.Controller
             _registry.RemoveBoat(memberId, boatId);
         }
 
-        private void GetMemberInfo()
+        private void ListMember()
         {
             try
             {
