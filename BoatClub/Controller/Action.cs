@@ -53,13 +53,8 @@ namespace BoatClub.Controller
                     case "update-member":
                         UpdateMember();
                         break;
-<<<<<<< HEAD
                     case "delete_member":
                         DeleteMember();
-=======
-                    case "delete-member":
-                        _cli.Display(_registry.DeleteMemberById(_args[0]));
->>>>>>> 685a652bbff457860c957a3a4d4807afbde5f4d8
                         break;
                     case "list-member":
                         ListMember();
