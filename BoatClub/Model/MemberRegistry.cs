@@ -88,15 +88,22 @@ namespace BoatClub.Model
         public void UpdateMember(string memberId, string newName, string newPersonalNumber)
         {
             List<Member> memberList = GetMemberList();
+            Member memberToBeFound = null;
 
             foreach(Member member in memberList)
             {
                 if (member.MemberId == memberId)
                 {
+                    memberToBeFound = member;
                     member.Name = newName;
                     member.PersonalNumber = newPersonalNumber;
                     break;
                 }
+            }
+
+            if (memberToBeFound == null)
+            {
+                throw new Exception($"Member with id {memberId} does not exist.");
             }
 
             SaveMemberList(memberList);

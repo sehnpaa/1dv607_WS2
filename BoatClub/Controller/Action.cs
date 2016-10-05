@@ -140,6 +140,7 @@ namespace BoatClub.Controller
         private void UpdateMember()
         {
             _registry.UpdateMember(_args[0], _args[1], _args[2]);
+            _cli.Display("Successfully updated member.");
             _cli.DisplayMember(_registry.GetMemberById(_args[0]));
         }
 
