@@ -76,15 +76,15 @@ namespace BoatClub.View
             Console.ResetColor();
             Console.WriteLine();
             Console.WriteLine($"Examples of valid commands:\n{SingleLine}");
-            Console.WriteLine("create_member Sven 19550101-0000");
-            Console.WriteLine("update_member 5 Sven 19550101-0000");
-            Console.WriteLine("delete_member 5");
-            Console.WriteLine("info_member 7");
-            Console.WriteLine("list_members_VL");
-            Console.WriteLine("list_members_CL");
-            Console.WriteLine("add_boat 5 SailBoat 12.5");
-            Console.WriteLine("update_boat 5 3 Other 11.5");
-            Console.WriteLine("remove_boat 5 3");
+            Console.WriteLine("add-member <name> <YYYYMMDD-XXXX>");
+            Console.WriteLine("update-member <id> <name> <YYYYMMDD-XXXX>");
+            Console.WriteLine("delete-member <id>");
+            Console.WriteLine("list-member <id>");
+            Console.WriteLine("list-members_VL");
+            Console.WriteLine("list-members_CL");
+            Console.WriteLine("add-boat <id> <boatType> <lengthInMeters>");
+            Console.WriteLine("update-boat <id> <boat-id> <boatType> <lengthInMeters>");
+            Console.WriteLine("remove-boat <id> <boat-id>");
             Console.WriteLine("help");
             Console.WriteLine();
         }
