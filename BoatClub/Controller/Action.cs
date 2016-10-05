@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using BoatClub.Model;
@@ -21,8 +20,8 @@ namespace BoatClub.Controller
             {"update-member", 3},
             {"delete-member", 1},
             {"list-member", 1},
-            {"list-members-VL", 0},
-            {"list-members-CL", 0},
+            {"list-members-vl", 0},
+            {"list-members-cl", 0},
             {"add-boat", 3},
             {"update-boat", 4},
             {"remove-boat", 2},
