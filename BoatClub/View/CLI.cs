@@ -75,7 +75,7 @@ namespace BoatClub.View
 
         public void DisplayBoat(Boat b)
         {
-            Console.WriteLine($"Boat type: {b.BoatType} \tBoat length: {b.BoatLength}");
+            Console.WriteLine($"{b.BoatType} {b.BoatLength}m");
         }
 
         public void DisplayValidCommands()
