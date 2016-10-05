@@ -145,8 +145,9 @@ namespace BoatClub.Controller
         private void RemoveBoat()
         {
             var memberId = _args[0];
-            var boatId = _args[1];
-            _registry.RemoveBoat(memberId, boatId);
+            var boatIndex = int.Parse(_args[1]);
+
+            _registry.RemoveBoat(memberId, boatIndex);
         }
 
         private void ListMember()
