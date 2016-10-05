@@ -42,7 +42,7 @@ namespace BoatClub.Controller
             {
                 if (_validNumberOfArgs[_command] != _args.Count)
                 {
-                    _cli.Display("--> Incorrect number of arguments");
+                    _cli.Display("Incorrect number of arguments");
                     return;
                 }
                 switch (_command)
@@ -83,7 +83,7 @@ namespace BoatClub.Controller
             }
             catch (KeyNotFoundException)
             {
-                Console.WriteLine("--> Command is not supported. Write < help >to get list of commands.");
+                Console.WriteLine("Command is not supported. Write <help> to get list of commands.");
             }
             catch (Exception e)
             {
@@ -99,7 +99,7 @@ namespace BoatClub.Controller
 
             if (member.GetMemberAge() < 18)
             {
-                Console.WriteLine("--> You must be of age 18 to become a member.");
+                Console.WriteLine("You must be of age 18 to become a member.");
             }
             else
             {
