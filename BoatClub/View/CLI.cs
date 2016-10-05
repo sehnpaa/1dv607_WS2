@@ -80,7 +80,6 @@ namespace BoatClub.View
 
         public void DisplayValidCommands()
         {
-            Console.ResetColor();
             Console.WriteLine();
             Console.WriteLine($"Examples of valid commands:\n{SingleLine}");
             Console.WriteLine("add-member <name> <YYYYMMDD-XXXX>");
@@ -103,6 +102,7 @@ namespace BoatClub.View
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Boat Club Version[1.0.0]");
             Console.WriteLine($"2016 C. Trosell, P. Andersson, U. Skarin\n{DoubleLine}");
+            Console.ResetColor();
 
             DisplayValidCommands();
         }
