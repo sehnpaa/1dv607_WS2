@@ -146,15 +146,8 @@ namespace BoatClub.Controller
 
         private void ListMember()
         {
-            try
-            {
-                var id = _args[0];
-                _cli.DisplayMember(_registry.GetMemberById(id));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            var id = _args[0];
+            _cli.DisplayMember(_registry.GetMemberById(id));
         }
 
         private void DeleteMember()
