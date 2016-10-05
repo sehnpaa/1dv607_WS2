@@ -107,6 +107,7 @@ namespace BoatClub.Controller
             var member = new Member(name, personalNumber, _registry.GetNextMemberId());
 
             _registry.SaveMember(member);
+            _cli.Display("Successfully added member.");
             _cli.DisplayMember(member);
         }
 
