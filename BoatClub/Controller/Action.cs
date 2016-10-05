@@ -87,11 +87,11 @@ namespace BoatClub.Controller
             }
             catch (ArgumentException e)
             {
-                Console.WriteLine(e.Message);
+                _cli.DisplayErrorMessage(e.Message);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                _cli.DisplayErrorMessage(e.Message);
             }
         }
 

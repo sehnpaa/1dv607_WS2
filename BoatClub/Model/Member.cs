@@ -22,6 +22,10 @@ namespace BoatClub.Model
                 {
                     throw new ArgumentNullException(nameof(value));
                 }
+                if (!Regex.IsMatch(value, @"^[a-zA-Z]+$"))
+                {
+                    throw new ArgumentException("Invalid characters in member name. Only letters allowed!");
+                }
                 _name = value;
             }
         }
