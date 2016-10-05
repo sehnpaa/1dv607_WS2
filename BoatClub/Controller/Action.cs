@@ -68,10 +68,10 @@ namespace BoatClub.Controller
                     case "remove-boat":
                         RemoveBoat();
                         break;
-                    case "list-members-VL":
+                    case "list-members-vl":
                         _cli.DisplayMemberListVerbose(_registry.GetMemberList());
                         break;
-                    case "list-members-CL":
+                    case "list-members-cl":
                         _cli.DisplayMemberListCompact(_registry.GetMemberList());
                         break;
                     case "help":
