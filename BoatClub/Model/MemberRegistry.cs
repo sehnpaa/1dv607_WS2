@@ -58,24 +58,33 @@ namespace BoatClub.Model
             return memberToGet;
         }
 
-        public string DeleteMemberById(string id)
+        public Member DeleteMemberById(string id)
         {
-            List<Member> updatedMemberList = new List<Member>();
+            Console.WriteLine("DeleteMemberById:63");
+
             List<Member> memberList = GetMemberList();
-            
-            foreach(Member member in memberList)
+            Member deletedMember = null;
+            List<Member> updatedMemberList = new List<Member>();
+
+            foreach (Member member in memberList)
             {
                 if (member.MemberId == id)
                 {
+                    deletedMember = member;
                     continue;
                 }
 
                 updatedMemberList.Add(member);
             }
 
+            if (deletedMember == null)
+            {
+                throw new Exception("Member with id {id} could not be deleted. Not found.");
+            }
+
             SaveMemberList(updatedMemberList);
 
-            return $"Member with id {id} was deleted";
+            return deletedMember;
         }
 
         public void UpdateMember(string memberId, string newName, string newPersonalNumber)
