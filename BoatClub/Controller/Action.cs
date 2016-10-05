@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
 using BoatClub.Model;
 using BoatClub.View;
 
@@ -27,6 +25,7 @@ namespace BoatClub.Controller
             {"add-boat", 3},
             {"update-boat", 4},
             {"remove-boat", 2},
+            {"clear", 0},
             {"help", 0}
         };
 
@@ -42,14 +41,6 @@ namespace BoatClub.Controller
         {
             try
             {
-                // TODO Enter ignore?
-                //var cki = Console.ReadKey();
-
-                //if (cki.Key == ConsoleKey.Enter)
-                //{
-                //    return;
-                //}
-
                 if (_validNumberOfArgs[_command] != _args.Count)
                 {
                     _cli.Display("Incorrect number of arguments");
@@ -86,6 +77,9 @@ namespace BoatClub.Controller
                         break;
                     case "help":
                         _cli.DisplayValidCommands();
+                        break;
+                    case "clear":
+                        _cli.ClearConsole();
                         break;
                     default:
                         _cli.DisplayValidCommands();
@@ -157,15 +151,8 @@ namespace BoatClub.Controller
 
         private void ListMember()
         {
-            try
-            {
-                var id = _args[0];
-                _cli.DisplayMember(_registry.GetMemberById(id));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            var id = _args[0];
+            _cli.DisplayMember(_registry.GetMemberById(id));
         }
 
         private void DeleteMember()
