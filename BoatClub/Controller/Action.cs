@@ -204,23 +204,23 @@ namespace BoatClub.Controller
 
         private Boat CreateBoat()
         {
-            // TODO: Handle dots and comma input!
-            //try
-            //{
             var boatTypeInput = _args[1];
             var lengthInMetresInput = _args[2];
-            double lengthInMetres;
 
-            var boatType = (BoatType) Enum.Parse(typeof(BoatType), boatTypeInput);
-            double.TryParse(lengthInMetresInput, out lengthInMetres);
+            if (Enum.IsDefined(typeof(BoatType), boatTypeInput))
+            {
+                double lengthInMetres;
+                var boatType = (BoatType) Enum.Parse(typeof(BoatType), boatTypeInput);
+                double.TryParse(lengthInMetresInput, out lengthInMetres);
+                var boat = new Boat(boatType, lengthInMetres);
 
-            var boat = new Boat(boatType, lengthInMetres);
+                return boat;
+            }
+            else
+            {
+                throw new Exception("You have entered an invalid type of boat."); // TODO showing path to exception.
+            }
 
-            return boat;
-            //} catch (ArgumentException)
-            //{
-            //    throw new Exception($"Boat type '{_args[1]}' does not exist.");
-            //}
         }
 
         private void SetCommand(string s)
