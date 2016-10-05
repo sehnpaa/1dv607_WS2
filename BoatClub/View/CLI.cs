@@ -66,6 +66,13 @@ namespace BoatClub.View
             }
         }
 
+        public void DisplayErrorMessage(string errorMessage)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(errorMessage);
+            Console.ResetColor();
+        }
+
         public void DisplayBoat(Boat b)
         {
             Console.WriteLine($"Boat type: {b.BoatType} \tBoat length: {b.BoatLength}");
