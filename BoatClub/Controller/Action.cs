@@ -149,7 +149,7 @@ namespace BoatClub.Controller
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                _cli.DisplayErrorMessage(e.Message);
             }
         }
 

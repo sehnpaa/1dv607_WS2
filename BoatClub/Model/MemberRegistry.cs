@@ -77,7 +77,7 @@ namespace BoatClub.Model
 
             if (deletedMember == null)
             {
-                throw new Exception("Member with id {id} could not be deleted. Not found.");
+                throw new Exception($"Member with id {id} could not be deleted. Not found.");
             }
 
             SaveMemberList(updatedMemberList);
