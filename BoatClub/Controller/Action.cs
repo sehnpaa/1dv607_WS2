@@ -54,7 +54,7 @@ namespace BoatClub.Controller
                     case "update-member":
                         UpdateMember();
                         break;
-                    case "delete_member":
+                    case "delete-member":
                         DeleteMember();
                         break;
                     case "list-member":
