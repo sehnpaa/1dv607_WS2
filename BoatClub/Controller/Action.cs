@@ -69,10 +69,10 @@ namespace BoatClub.Controller
                         RemoveBoat();
                         break;
                     case "list-members-vl":
-                        _cli.DisplayMemberListVerbose(_registry.GetMemberList());
+                        ListMembersVL();
                         break;
                     case "list-members-cl":
-                        _cli.DisplayMemberListCompact(_registry.GetMemberList());
+                        ListMembersCL();
                         break;
                     case "help":
                         _cli.DisplayValidCommands();
@@ -104,6 +104,17 @@ namespace BoatClub.Controller
             _registry.SaveMember(member);
             _cli.DisplayMember(member);
         }
+
+        private void ListMembersVL()
+        {
+            _cli.DisplayMemberListVerbose(_registry.GetMemberList());
+        }
+
+        private void ListMembersCL()
+        {
+            _cli.DisplayMemberListCompact(_registry.GetMemberList());
+        }
+
 
         private void UpdateMember()
         {
