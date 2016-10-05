@@ -46,13 +46,13 @@ namespace BoatClub.View
             Console.WriteLine(s);
         }
 
-        private void DisplayMemberCompact(Member m)
+        public void DisplayMemberCompact(Member m)
         {
             Console.WriteLine(
                 string.Format($"\nMember: {m.Name} \nID: {m.MemberId} \nNumber of Boats: {m.Boats.Count}\n{SingleLine}"));
         }
 
-        private void DisplayMemberVerbose(Member m)
+        public void DisplayMemberVerbose(Member m)
         {
             Console.WriteLine($"\nName: {m.Name} \nMember ID: {m.MemberId} \nPersonal number: {m.PersonalNumber}" );
             Console.WriteLine(SingleLine);
