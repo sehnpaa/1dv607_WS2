@@ -108,12 +108,27 @@ namespace BoatClub.Controller
 
         private void ListMembersVL()
         {
-            _cli.DisplayMemberListVerbose(_registry.GetMemberList());
+            List<Member> memberList = _registry.GetMemberList();
+
+            if (memberList.Count < 1)
+            {
+                _cli.DisplayErrorMessage("Could not display verbose member list. No members found.");
+                return;
+            }
+
+            _cli.DisplayMemberListVerbose(memberList);
         }
 
         private void ListMembersCL()
         {
-            _cli.DisplayMemberListCompact(_registry.GetMemberList());
+            List<Member> memberList = _registry.GetMemberList();
+
+            if (memberList.Count < 1)
+            {
+                _cli.DisplayErrorMessage("Could not display compact member list. No members found.");
+                return;
+            }
+            _cli.DisplayMemberListCompact(memberList);
         }
 
 
