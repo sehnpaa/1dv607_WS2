@@ -54,7 +54,7 @@ namespace BoatClub.Controller
                         UpdateMember();
                         break;
                     case "delete_member":
-                        _cli.Display(_registry.DeleteMemberById(_args[0]));
+                        DeleteMember();
                         break;
                     case "info_member":
                         GetMemberInfo();
@@ -127,6 +127,21 @@ namespace BoatClub.Controller
             {
                 var id = _args[0];
                 _cli.DisplayMember(_registry.GetMemberById(id));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        private void DeleteMember()
+        {
+            try
+            {
+                string memberId = _args[0];
+                Member deletedMember = _registry.DeleteMemberById(memberId);
+                _cli.Display($"Member was successfully deleted.");
+                _cli.DisplayMemberVerbose(deletedMember);
             }
             catch (Exception e)
             {
