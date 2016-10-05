@@ -163,7 +163,7 @@ namespace BoatClub.Model
 
                     if (index < 1 || index > member.Boats.Count)
                     {
-                        throw new ArgumentOutOfRangeException($"Boat index {index} is out of range.");
+                        throw new Exception($"Boat index {index} is out of range.");
                     }
                     member.Boats.RemoveAt(index - 1);
                 }
