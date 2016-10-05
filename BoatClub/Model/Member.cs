@@ -45,6 +45,10 @@ namespace BoatClub.Model
                 {
                     throw new ArgumentException("Please enter a valid personal number: YYYYMMDD-XXXX");
                 }
+                if (this.GetMemberAge() < 18)
+                {
+                    throw new Exception("You must be of age 18 to become a member.");
+                }
                 _personalNumber = value;
             }
         }
