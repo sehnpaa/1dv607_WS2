@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
 using BoatClub.Model;
 using BoatClub.View;
 
@@ -40,6 +42,14 @@ namespace BoatClub.Controller
         {
             try
             {
+                // TODO Enter ignore?
+                //var cki = Console.ReadKey();
+
+                //if (cki.Key == ConsoleKey.Enter)
+                //{
+                //    return;
+                //}
+
                 if (_validNumberOfArgs[_command] != _args.Count)
                 {
                     _cli.Display("Incorrect number of arguments");
