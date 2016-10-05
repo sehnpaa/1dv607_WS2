@@ -81,7 +81,7 @@ namespace BoatClub.View
         public void DisplayValidCommands()
         {
             Console.WriteLine();
-            Console.WriteLine($"Examples of valid commands:\n{SingleLine}");
+            Console.WriteLine($"Commands:\n{SingleLine}");
             Console.WriteLine("add-member <name> <YYYYMMDD-XXXX>");
             Console.WriteLine("update-member <id> <name> <YYYYMMDD-XXXX>");
             Console.WriteLine("delete-member <id>");
@@ -103,8 +103,7 @@ namespace BoatClub.View
             Console.WriteLine("Boat Club Version[1.0.0]");
             Console.WriteLine($"2016 C. Trosell, P. Andersson, U. Skarin\n{DoubleLine}");
             Console.ResetColor();
-
-            DisplayValidCommands();
+            Console.WriteLine("\nWrite help to get a list of commands.");
         }
     }
 }
