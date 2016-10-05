@@ -60,8 +60,6 @@ namespace BoatClub.Model
 
         public Member DeleteMemberById(string id)
         {
-            Console.WriteLine("DeleteMemberById:63");
-
             List<Member> memberList = GetMemberList();
             Member deletedMember = null;
             List<Member> updatedMemberList = new List<Member>();
