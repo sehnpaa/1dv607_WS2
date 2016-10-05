@@ -172,17 +172,10 @@ namespace BoatClub.Controller
 
         private void AddBoat()
         {
-            try
-            {
-                var boat = CreateBoat();
-                var memberId = _args[0];
-                _registry.AddBoat(memberId, boat);
-                _cli.DisplayBoat(boat);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            var boat = CreateBoat();
+            var memberId = _args[0];
+            _registry.AddBoat(memberId, boat);
+            _cli.DisplayBoat(boat);
         }
 
         private void UpdateBoat()
