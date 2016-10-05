@@ -86,8 +86,8 @@ namespace BoatClub.View
             Console.WriteLine("update-member <id> <name> <YYYYMMDD-XXXX>");
             Console.WriteLine("delete-member <id>");
             Console.WriteLine("list-member <id>");
-            Console.WriteLine("list-members-VL");
-            Console.WriteLine("list-members-CL");
+            Console.WriteLine("list-members-vl");
+            Console.WriteLine("list-members-cl");
             Console.WriteLine("add-boat <id> <boatType> <lengthInMeters>");
             Console.WriteLine("update-boat <id> <boat-id> <boatType> <lengthInMeters>");
             Console.WriteLine("remove-boat <id> <boat-id>");
