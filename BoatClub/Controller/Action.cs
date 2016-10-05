@@ -78,6 +78,7 @@ namespace BoatClub.Controller
                         _cli.DisplayValidCommands();
                         break;
                     default:
+                        _cli.DisplayValidCommands();
                         break;
                 }
             }
@@ -146,8 +147,8 @@ namespace BoatClub.Controller
         {
             try
             {
-                string memberId = _args[0];
-                Member deletedMember = _registry.DeleteMemberById(memberId);
+                var memberId = _args[0];
+                var deletedMember = _registry.DeleteMemberById(memberId);
                 _cli.Display($"Member was successfully deleted.");
                 _cli.DisplayMemberVerbose(deletedMember);
             }
