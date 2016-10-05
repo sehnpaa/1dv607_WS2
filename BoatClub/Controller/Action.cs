@@ -85,9 +85,13 @@ namespace BoatClub.Controller
             {
                 Console.WriteLine("Command is not supported. Write <help> to get list of commands.");
             }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(e.Message);
             }
         }
 
