@@ -91,6 +91,7 @@ namespace BoatClub.View
             Console.WriteLine("add-boat <id> <boatType> <lengthInMeters>");
             Console.WriteLine("update-boat <id> <boat-id> <boatType> <lengthInMeters>");
             Console.WriteLine("remove-boat <id> <boat-id>");
+            Console.WriteLine("clear");
             Console.WriteLine("help");
             Console.WriteLine();
         }
@@ -104,6 +105,12 @@ namespace BoatClub.View
             Console.WriteLine($"2016 C. Trosell, P. Andersson, U. Skarin\n{DoubleLine}");
             Console.ResetColor();
             Console.WriteLine("\nWrite help to get a list of commands.");
+        }
+
+        public void ClearConsole()
+        {
+            Console.Clear();
+            DisplayApplicationHeader();
         }
     }
 }

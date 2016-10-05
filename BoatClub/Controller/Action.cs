@@ -25,6 +25,7 @@ namespace BoatClub.Controller
             {"add-boat", 3},
             {"update-boat", 4},
             {"remove-boat", 2},
+            {"clear", 0},
             {"help", 0}
         };
 
@@ -76,6 +77,9 @@ namespace BoatClub.Controller
                         break;
                     case "help":
                         _cli.DisplayValidCommands();
+                        break;
+                    case "clear":
+                        _cli.ClearConsole();
                         break;
                     default:
                         _cli.DisplayValidCommands();
