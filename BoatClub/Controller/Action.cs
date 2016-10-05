@@ -175,7 +175,9 @@ namespace BoatClub.Controller
             var boat = CreateBoat();
             var memberId = _args[0];
             _registry.AddBoat(memberId, boat);
-            _cli.DisplayBoat(boat);
+            Member member = _registry.GetMemberById(memberId);
+            _cli.Display("Successfully added boat.");
+            _cli.DisplayMember(member);
         }
 
         private void UpdateBoat()
