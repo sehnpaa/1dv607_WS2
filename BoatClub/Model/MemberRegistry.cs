@@ -150,6 +150,7 @@ namespace BoatClub.Model
         public void RemoveBoat(string memberId, string boatId)
         {
             List<Member> memberList = GetMemberList();
+            Member memberToBeFound = null;
             int index;
 
             int.TryParse(boatId, out index);
@@ -158,12 +159,19 @@ namespace BoatClub.Model
             {
                 if (member.MemberId == memberId)
                 {
+                    memberToBeFound = member;
+
                     if (index < 1 || index > member.Boats.Count)
                     {
                         throw new ArgumentOutOfRangeException($"Boat index {index} is out of range.");
                     }
                     member.Boats.RemoveAt(index - 1);
                 }
+            }
+
+            if (memberToBeFound == null)
+            {
+                throw new Exception($"Could not remove boat. Member with id {memberId} was not found.");
             }
 
             SaveMemberList(memberList);
