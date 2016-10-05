@@ -56,6 +56,7 @@ namespace BoatClub.View
         {
             Console.WriteLine($"\nName: {m.Name} \nMember ID: {m.MemberId} \nPersonal number: {m.PersonalNumber}" );
             Console.WriteLine(SingleLine);
+            Console.WriteLine("Boats:");
 
             int i = 1;
             foreach (var b in m.Boats)
