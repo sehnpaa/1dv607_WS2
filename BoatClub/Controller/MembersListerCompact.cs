@@ -1,0 +1,29 @@
+﻿using System.Collections.Generic;
+using BoatClub.Model;
+using BoatClub.View;
+
+namespace BoatClub.Controller
+{
+    internal class MembersListerCompact : Interface1
+    {
+        private List<Member>_memberList;
+        public MembersListerCompact()
+        {
+        }
+
+        public void RecieveFromM(List<string> args, MemberRegistry registry)
+        {
+            _memberList = registry.GetMemberList();
+        }
+
+        public void SendToV(CLI cli)
+        {
+            if (_memberList.Count < 1)
+            {
+                cli.DisplayErrorMessage("Could not display compact member list. No members found.");
+                return;
+            }
+            cli.DisplayMemberListCompact(_memberList);
+        }
+    }
+}

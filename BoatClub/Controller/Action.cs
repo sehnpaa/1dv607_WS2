@@ -46,45 +46,48 @@ namespace BoatClub.Controller
                     _cli.Display("Incorrect number of arguments");
                     return;
                 }
+                Interface1 t;
                 switch (_command)
                 {
                     case "add-member":
-                        AddMember();
+                        t = new MemberAdder();
                         break;
                     case "update-member":
-                        UpdateMember();
+                        t = new MemberUpdater();
                         break;
                     case "delete-member":
-                        DeleteMember();
+                        t = new MemberDeleter();
                         break;
                     case "list-member":
-                        ListMember();
+                        t = new MemberLister();
                         break;
                     case "add-boat":
-                        AddBoat();
+                        t = new BoatAdder();
                         break;
                     case "update-boat":
-                        UpdateBoat();
+                        t = new BoatUpdater();
                         break;
                     case "remove-boat":
-                        RemoveBoat();
+                        t = new BoatRemover();
                         break;
                     case "list-members-vl":
-                        ListMembersVL();
+                        t = new MembersListerVerbose();
                         break;
                     case "list-members-cl":
-                        ListMembersCL();
+                        t = new MembersListerCompact();
                         break;
                     case "help":
-                        _cli.DisplayValidCommands();
+                        t = new Helper();
                         break;
                     case "clear":
-                        _cli.ClearConsole();
+                        t = new DisplayClearer();
                         break;
                     default:
-                        _cli.DisplayValidCommands();
+                        t = new Helper();
                         break;
                 }
+                t.RecieveFromM(_args, _registry);
+                t.SendToV(_cli);
             }
             catch (KeyNotFoundException)
             {
@@ -98,120 +101,6 @@ namespace BoatClub.Controller
             {
                 _cli.DisplayErrorMessage(e.Message);
             }
-        }
-
-        private void AddMember()
-        {
-            var name = _args[0];
-            var personalNumber = _args[1];
-            var member = new Member(name, personalNumber, _registry.GetNextMemberId());
-
-            _registry.SaveMember(member);
-            _cli.Display("Successfully added member.");
-            _cli.DisplayMember(member);
-        }
-
-        private void ListMembersVL()
-        {
-            List<Member> memberList = _registry.GetMemberList();
-
-            if (memberList.Count < 1)
-            {
-                _cli.DisplayErrorMessage("Could not display verbose member list. No members found.");
-                return;
-            }
-
-            _cli.DisplayMemberListVerbose(memberList);
-        }
-
-        private void ListMembersCL()
-        {
-            List<Member> memberList = _registry.GetMemberList();
-
-            if (memberList.Count < 1)
-            {
-                _cli.DisplayErrorMessage("Could not display compact member list. No members found.");
-                return;
-            }
-            _cli.DisplayMemberListCompact(memberList);
-        }
-
-
-        private void UpdateMember()
-        {
-            _registry.UpdateMember(_args[0], _args[1], _args[2]);
-            _cli.Display("Successfully updated member.");
-            _cli.DisplayMember(_registry.GetMemberById(_args[0]));
-        }
-
-        private void RemoveBoat()
-        {
-            var memberId = _args[0];
-            var boatIndex = int.Parse(_args[1]);
-
-            _registry.RemoveBoat(memberId, boatIndex);
-        }
-
-        private void ListMember()
-        {
-            var id = _args[0];
-            _cli.DisplayMember(_registry.GetMemberById(id));
-        }
-
-        private void DeleteMember()
-        {
-            var memberId = _args[0];
-            var deletedMember = _registry.DeleteMemberById(memberId);
-            _cli.Display($"Member was successfully deleted.");
-            _cli.DisplayMemberVerbose(deletedMember);
-        }
-
-        private void AddBoat()
-        {
-            var boat = CreateBoat();
-            var memberId = _args[0];
-            _registry.AddBoat(memberId, boat);
-            Member member = _registry.GetMemberById(memberId);
-            _cli.Display("Successfully added boat.");
-            _cli.DisplayMember(member);
-        }
-
-        private void UpdateBoat()
-        {
-            var memberId = _args[0];
-            var boatIndex = int.Parse(_args[1]);
-            var boatType = _args[2];
-
-            if (Enum.IsDefined(typeof(BoatType), boatType))
-            {
-                var length = float.Parse(_args[3]);
-                _registry.UpdateBoat(memberId, boatIndex, boatType, length);
-            }
-            else
-            {
-                throw new Exception("You have entered an invalid type of boat.");
-            }
-        }
-
-        private Boat CreateBoat()
-        {
-            var boatTypeInput = _args[1];
-            var lengthInMetresInput = _args[2];
-
-            if (Enum.IsDefined(typeof(BoatType), boatTypeInput))
-            {
-                double lengthInMetres;
-                var boatType = (BoatType) Enum.Parse(typeof(BoatType), boatTypeInput);
-                double.TryParse(lengthInMetresInput, out lengthInMetres);
-                var boat = new Boat(boatType, lengthInMetres);
-
-                return boat;
-            }
-            else
-            {
-                throw new Exception("You have entered an invalid type of boat."); // TODO showing path to exception.
-            }
-
         }
 
         private void SetCommand(string s)
