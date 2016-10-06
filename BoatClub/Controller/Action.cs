@@ -91,7 +91,7 @@ namespace BoatClub.Controller
             }
             catch (KeyNotFoundException)
             {
-                Console.WriteLine("Command is not supported. Write <help> to get list of commands.");
+                Console.WriteLine($"Command '{_command}' is not supported. Write <help> to get list of valid commands.");
             }
             catch (ArgumentException e)
             {
