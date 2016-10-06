@@ -66,7 +66,8 @@ namespace BoatClub.Controller
                     case "update-boat":
                         UpdateBoat();
                         break;
-                    case "remove-boat":
+                    case "delete-boat":
+                        Console.WriteLine("here in delete-boat");
                         DeleteBoat();
                         break;
                     case "list-members-vl":
