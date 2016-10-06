@@ -7,6 +7,7 @@ namespace BoatClub.Controller
 {
     internal class BoatUpdater : ICommandHandler
     {
+        private Member _member;
         public BoatUpdater()
         {
         }
@@ -21,6 +22,7 @@ namespace BoatClub.Controller
             {
                 var length = float.Parse(args[3]);
                 registry.UpdateBoat(memberId, boatIndex, boatType, length);
+                _member = registry.GetMemberById(memberId);
             }
             else
             {
@@ -30,7 +32,8 @@ namespace BoatClub.Controller
 
         public void SendToView(CLI cli)
         {
-
+            cli.Display("Successfully updated boat.");
+            cli.DisplayMember(_member);
         }
     }
 }
