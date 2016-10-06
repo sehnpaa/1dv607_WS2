@@ -43,7 +43,22 @@ namespace BoatClub.Controller
             }
             else
             {
-                throw new Exception("You have entered an invalid type of boat."); // TODO showing path to exception.
+                string listOfValidBoatTypes = "";
+                string[] boatTypes = Enum.GetNames(typeof(BoatType));
+
+                for (int i = 0; i < boatTypes.Length; i++)
+                {
+                    listOfValidBoatTypes += boatTypes[i];
+
+                    if (i < boatTypes.Length - 1)
+                    {
+                        listOfValidBoatTypes += ", ";
+                    }
+                }
+
+
+
+                throw new Exception($"You have entered an invalid type of boat. \nVaild boat types: {listOfValidBoatTypes}"); // TODO showing path to exception.
             }
 
         }
