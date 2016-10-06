@@ -24,7 +24,7 @@ namespace BoatClub.Controller
             {"list-members-cl", 0},
             {"add-boat", 3},
             {"update-boat", 4},
-            {"remove-boat", 2},
+            {"delete-boat", 2},
             {"clear", 0},
             {"help", 0}
         };
@@ -67,7 +67,6 @@ namespace BoatClub.Controller
                         UpdateBoat();
                         break;
                     case "delete-boat":
-                        Console.WriteLine("here in delete-boat");
                         DeleteBoat();
                         break;
                     case "list-members-vl":
@@ -151,6 +150,7 @@ namespace BoatClub.Controller
             var boatIndex = int.Parse(_args[1]);
 
             _registry.DeleteBoat(memberId, boatIndex);
+            _cli.Display($"Boat was successfully deleted.");
         }
 
         private void ListMember()
