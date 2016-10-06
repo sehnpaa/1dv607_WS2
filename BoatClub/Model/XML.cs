@@ -7,7 +7,7 @@ namespace BoatClub.Model
 {
     internal class XML
     {
-        private static string MemberListXMLPath = "../../Storage/memberList.xml";
+        private static string MemberListXMLPath = "./memberList.xml";
 
         public static void SaveMemberListToXMLFile(List<Member> memberList)
         {
