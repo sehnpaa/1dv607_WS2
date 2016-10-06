@@ -24,7 +24,7 @@ namespace BoatClub.Controller
             {"list-members-cl", 0},
             {"add-boat", 3},
             {"update-boat", 4},
-            {"remove-boat", 2},
+            {"delete-boat", 2},
             {"clear", 0},
             {"help", 0}
         };
@@ -67,8 +67,8 @@ namespace BoatClub.Controller
                     case "update-boat":
                         commandHandler = new BoatUpdater();
                         break;
-                    case "remove-boat":
-                        commandHandler = new BoatRemover();
+                    case "delete-boat":
+                        commandHandler = new BoatDeleter();
                         break;
                     case "list-members-vl":
                         commandHandler = new MembersListerVerbose();

@@ -4,9 +4,9 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class BoatRemover : ICommandHandler
+    internal class BoatDeleter : ICommandHandler
     {
-        public BoatRemover()
+        public BoatDeleter()
         {
         }
 
@@ -15,7 +15,7 @@ namespace BoatClub.Controller
             var memberId = args[0];
             var boatIndex = int.Parse(args[1]);
 
-            registry.RemoveBoat(memberId, boatIndex);
+            registry.DeleteBoat(memberId, boatIndex);
         }
 
         public void SendToV(CLI cli)

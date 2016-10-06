@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Controller\Action.cs" />
     <Compile Include="Controller\BoatAdder.cs" />
-    <Compile Include="Controller\BoatRemover.cs" />
+    <Compile Include="Controller\BoatDeleter.cs" />
     <Compile Include="Controller\BoatUpdater.cs" />
     <Compile Include="Controller\DisplayClearer.cs" />
     <Compile Include="Controller\Helper.cs" />

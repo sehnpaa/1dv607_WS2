@@ -154,7 +154,7 @@ namespace BoatClub.Model
             SaveMemberList(memberList);
         }
 
-        public void RemoveBoat(string memberId, int boatIndex)
+        public void DeleteBoat(string memberId, int boatIndex)
         {
             List<Member> memberList = GetMemberList();
             Member memberToBeFound = null;
