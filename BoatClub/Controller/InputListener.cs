@@ -20,8 +20,8 @@ namespace BoatClub.Controller
             while (true)
             {
                 Console.Write("\n>> ");
-                var input = Console.ReadLine();
-                var action = new Action(input, _registry, _cli);
+                string input = Console.ReadLine();
+                Action action = new Action(input, _registry, _cli);
                 action.Call();
             }
         }

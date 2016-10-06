@@ -13,7 +13,7 @@ namespace BoatClub.Controller
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            var memberId = args[0];
+            string memberId = args[0];
             _deletedMember = registry.DeleteMemberById(memberId);
         }
 

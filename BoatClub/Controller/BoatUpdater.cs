@@ -14,9 +14,9 @@ namespace BoatClub.Controller
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            var memberId = args[0];
-            var boatIndex = int.Parse(args[1]);
-            var boatType = args[2];
+            string memberId = args[0];
+            int boatIndex = int.Parse(args[1]);
+            string boatType = args[2];
 
             if (boatIndex > _member.Boats.Count || boatIndex < 1)
             {
@@ -25,7 +25,7 @@ namespace BoatClub.Controller
 
             if (Enum.IsDefined(typeof(BoatType), boatType))
             {
-                var length = float.Parse(args[3]);
+                float length = float.Parse(args[3]);
                 registry.UpdateBoat(memberId, boatIndex, boatType, length);
                 _member = registry.GetMemberById(memberId);
             }

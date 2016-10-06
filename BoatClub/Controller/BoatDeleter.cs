@@ -14,8 +14,8 @@ namespace BoatClub.Controller
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            var memberId = args[0];
-            var boatIndex = int.Parse(args[1]);
+            string memberId = args[0];
+            int boatIndex = int.Parse(args[1]);
 
             registry.DeleteBoat(memberId, boatIndex);
             _member = registry.GetMemberById(memberId);

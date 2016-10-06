@@ -14,9 +14,9 @@ namespace BoatClub.Controller
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            var id = args[0];
-            var name = args[1];
-            var personalNumber = args[2];
+            string id = args[0];
+            string name = args[1];
+            string personalNumber = args[2];
             registry.UpdateMember(id, name, personalNumber);
             _member = registry.GetMemberById(id);
         }
