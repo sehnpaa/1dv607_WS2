@@ -160,17 +160,10 @@ namespace BoatClub.Controller
 
         private void DeleteMember()
         {
-            try
-            {
-                var memberId = _args[0];
-                var deletedMember = _registry.DeleteMemberById(memberId);
-                _cli.Display($"Member was successfully deleted.");
-                _cli.DisplayMemberVerbose(deletedMember);
-            }
-            catch (Exception e)
-            {
-                _cli.DisplayErrorMessage(e.Message);
-            }
+            var memberId = _args[0];
+            var deletedMember = _registry.DeleteMemberById(memberId);
+            _cli.Display($"Member was successfully deleted.");
+            _cli.DisplayMemberVerbose(deletedMember);
         }
 
         private void AddBoat()
