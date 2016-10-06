@@ -47,7 +47,7 @@ namespace BoatClub.Model
                 }
                 if (GetMemberAge() < 18)
                 {
-                    throw new Exception("You must be of age 18 to become a member.");
+                    throw new Exception("Member must be 18 years of age.");
                 }
                 _personalNumber = value;
             }

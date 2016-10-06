@@ -6,6 +6,8 @@ namespace BoatClub.Controller
 {
     internal class BoatDeleter : ICommandHandler
     {
+        private Member _member;
+
         public BoatDeleter()
         {
         }
@@ -16,11 +18,13 @@ namespace BoatClub.Controller
             var boatIndex = int.Parse(args[1]);
 
             registry.DeleteBoat(memberId, boatIndex);
+            _member = registry.GetMemberById(memberId);
         }
 
         public void SendToView(CLI cli)
         {
-
+            cli.Display($"Successfully deleted boat.");
+            cli.DisplayMemberVerbose(_member);
         }
     }
 }
