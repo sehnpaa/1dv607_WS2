@@ -9,7 +9,6 @@ namespace BoatClub.Model
         {
             List<Member> memberList = XML.GetMemberListFromXMLFile();
             return memberList;
-
         } 
 
         public void SaveMemberList(List<Member> memberList)
@@ -52,7 +51,7 @@ namespace BoatClub.Model
 
             if (memberToGet == null)
             {
-                throw new Exception($"Member with id {id} does not exist.");
+                throw new Exception($"Member with id: {id} does not exist.");
             }
 
             return memberToGet;
@@ -81,7 +80,6 @@ namespace BoatClub.Model
             }
 
             SaveMemberList(updatedMemberList);
-
             return deletedMember;
         }
 
@@ -111,7 +109,7 @@ namespace BoatClub.Model
 
         public string DeleteMember(string memberId)
         {
-            return "Member was deleted.";
+            return $"Successfully deleted member with id: {memberId}";
         }
 
         public void AddBoat(string memberId, Boat boat)
@@ -142,9 +140,11 @@ namespace BoatClub.Model
 
             foreach(Member member in memberList)
             {
+
                 if (member.MemberId == memberId)
                 {
                     Boat boat = member.Boats[boatIndex - 1];
+
                     BoatType boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
                     boat.BoatType = boatType;
                     boat.BoatLength = length;

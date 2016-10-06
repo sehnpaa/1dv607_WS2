@@ -24,6 +24,7 @@ namespace BoatClub.Controller
 
         }
 
+
         public void SendToView(CLI cli)
         {
             cli.Display("Successfully added boat.");
