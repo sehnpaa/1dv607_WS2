@@ -78,7 +78,7 @@ namespace BoatClub.Model
         private bool IsPersonalNumberValid(string number)
         {
             const string regEx = @"^(?<date>\d{6}|\d{8})[-\s]?\d{4}$";
-            var date = Regex.Match(number, regEx).Groups["date"].Value;
+            string date = Regex.Match(number, regEx).Groups["date"].Value;
 
             return DateTime.TryParseExact(date, new[] {"yyyyMMdd"},
                 new CultureInfo("sv-SE"), DateTimeStyles.None, out _dateOfBirth);
@@ -86,8 +86,8 @@ namespace BoatClub.Model
 
         public int GetMemberAge()
         {
-            var today = DateTime.Today;
-            var age = today.Year - DateOfBirth.Year;
+            DateTime today = DateTime.Today;
+            int age = today.Year - DateOfBirth.Year;
             if (DateOfBirth > today.AddYears(-age))
                 age--;
             return age;

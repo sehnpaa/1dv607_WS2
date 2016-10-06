@@ -29,7 +29,7 @@ namespace BoatClub.Model
             List<Member> memberList = GetMemberList();
 
             if (memberList.Count == 0) return "1";
-            var lastId = memberList[memberList.Count - 1].MemberId;
+            string lastId = memberList[memberList.Count - 1].MemberId;
             int.TryParse(lastId, out id);
             id++;
 

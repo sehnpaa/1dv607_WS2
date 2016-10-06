@@ -24,7 +24,7 @@ namespace BoatClub.View
 
         public void DisplayMemberListVerbose(List<Member> memberList)
         {
-            foreach (var m in memberList)
+            foreach (Member m in memberList)
             {
                 DisplayMemberVerbose(m);
             }
@@ -32,7 +32,7 @@ namespace BoatClub.View
 
         public void DisplayMemberListCompact(List<Member> memberList)
         {
-            foreach (var m in memberList)
+            foreach (Member m in memberList)
             {
                 DisplayMemberCompact(m);
             }
@@ -58,7 +58,7 @@ namespace BoatClub.View
                 Console.WriteLine("Boats:");
 
                 int i = 1;
-                foreach (var b in m.Boats)
+                foreach (Boat b in m.Boats)
                 {
                     Console.Write($"\t{i}. ");
                     DisplayBoat(b);
