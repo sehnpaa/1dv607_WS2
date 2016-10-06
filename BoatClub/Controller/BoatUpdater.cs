@@ -17,6 +17,16 @@ namespace BoatClub.Controller
             var memberId = args[0];
             var boatIndex = int.Parse(args[1]);
             var boatType = args[2];
+            Console.WriteLine(boatIndex);
+            Console.WriteLine("dfgsfdg");
+            _member = registry.GetMemberById(memberId);
+
+            Console.WriteLine(_member.Boats.Count);
+
+            if (boatIndex > _member.Boats.Count || boatIndex < 1)
+            {
+                throw new Exception($"Member {_member.Name} does not own a bot with id: {boatIndex}.");
+            }
 
             if (Enum.IsDefined(typeof(BoatType), boatType))
             {
@@ -28,6 +38,8 @@ namespace BoatClub.Controller
             {
                 throw new Exception("You have entered an invalid type of boat.");
             }
+
+            
         }
 
         public void SendToView(CLI cli)
