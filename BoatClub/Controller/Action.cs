@@ -46,48 +46,48 @@ namespace BoatClub.Controller
                     _cli.Display("Incorrect number of arguments");
                     return;
                 }
-                ICommandHandler t;
+                ICommandHandler commandHandler;
                 switch (_command)
                 {
                     case "add-member":
-                        t = new MemberAdder();
+                        commandHandler = new MemberAdder();
                         break;
                     case "update-member":
-                        t = new MemberUpdater();
+                        commandHandler = new MemberUpdater();
                         break;
                     case "delete-member":
-                        t = new MemberDeleter();
+                        commandHandler = new MemberDeleter();
                         break;
                     case "list-member":
-                        t = new MemberLister();
+                        commandHandler = new MemberLister();
                         break;
                     case "add-boat":
-                        t = new BoatAdder();
+                        commandHandler = new BoatAdder();
                         break;
                     case "update-boat":
-                        t = new BoatUpdater();
+                        commandHandler = new BoatUpdater();
                         break;
                     case "remove-boat":
-                        t = new BoatRemover();
+                        commandHandler = new BoatRemover();
                         break;
                     case "list-members-vl":
-                        t = new MembersListerVerbose();
+                        commandHandler = new MembersListerVerbose();
                         break;
                     case "list-members-cl":
-                        t = new MembersListerCompact();
+                        commandHandler = new MembersListerCompact();
                         break;
                     case "help":
-                        t = new Helper();
+                        commandHandler = new Helper();
                         break;
                     case "clear":
-                        t = new DisplayClearer();
+                        commandHandler = new DisplayClearer();
                         break;
                     default:
-                        t = new Helper();
+                        commandHandler = new Helper();
                         break;
                 }
-                t.RecieveFromM(_args, _registry);
-                t.SendToV(_cli);
+                commandHandler.RecieveFromM(_args, _registry);
+                commandHandler.SendToV(_cli);
             }
             catch (KeyNotFoundException)
             {
