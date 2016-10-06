@@ -4,7 +4,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class BoatRemover : Interface1
+    internal class BoatRemover : ICommandHandler
     {
         public BoatRemover()
         {

@@ -4,7 +4,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class MembersListerCompact : Interface1
+    internal class MembersListerCompact : ICommandHandler
     {
         private List<Member>_memberList;
         public MembersListerCompact()

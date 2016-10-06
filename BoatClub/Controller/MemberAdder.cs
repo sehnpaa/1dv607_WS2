@@ -5,7 +5,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class MemberAdder : Interface1
+    internal class MemberAdder : ICommandHandler
     {
         private Member _member;
 

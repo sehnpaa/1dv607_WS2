@@ -4,7 +4,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class MemberDeleter : Interface1
+    internal class MemberDeleter : ICommandHandler
     {
         private Member _deletedMember;
         public MemberDeleter()

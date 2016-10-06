@@ -4,7 +4,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class Helper : Interface1
+    internal class Helper : ICommandHandler
     {
         public void RecieveFromM(List<string> args, MemberRegistry registry)
         {

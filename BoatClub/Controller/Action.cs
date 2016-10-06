@@ -46,7 +46,7 @@ namespace BoatClub.Controller
                     _cli.Display("Incorrect number of arguments");
                     return;
                 }
-                Interface1 t;
+                ICommandHandler t;
                 switch (_command)
                 {
                     case "add-member":

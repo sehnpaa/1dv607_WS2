@@ -4,7 +4,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class MemberUpdater : Interface1
+    internal class MemberUpdater : ICommandHandler
     {
         public MemberUpdater()
         {

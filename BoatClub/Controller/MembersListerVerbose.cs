@@ -4,7 +4,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    internal class MembersListerVerbose : Interface1
+    internal class MembersListerVerbose : ICommandHandler
     {
         private List<Member> _memberList;
         public MembersListerVerbose()

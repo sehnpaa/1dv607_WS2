@@ -7,7 +7,7 @@ using BoatClub.View;
 
 namespace BoatClub.Controller
 {
-    interface Interface1
+    interface ICommandHandler
     {
         void RecieveFromM(List<string> args, MemberRegistry registry);
         void SendToV(CLI cli);

@@ -49,7 +49,7 @@
     <Compile Include="Controller\BoatUpdater.cs" />
     <Compile Include="Controller\DisplayClearer.cs" />
     <Compile Include="Controller\Helper.cs" />
-    <Compile Include="Controller\Interface1.cs" />
+    <Compile Include="Controller\ICommandHandler.cs" />
     <Compile Include="Controller\MemberAdder.cs" />
     <Compile Include="Controller\MemberDeleter.cs" />
     <Compile Include="Controller\MemberLister.cs" />
