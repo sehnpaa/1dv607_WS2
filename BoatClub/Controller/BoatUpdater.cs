@@ -17,6 +17,7 @@ namespace BoatClub.Controller
             string memberId = args[0];
             int boatIndex = int.Parse(args[1]);
             string boatType = args[2];
+            _member = registry.GetMemberById(memberId);
 
             if (boatIndex > _member.Boats.Count || boatIndex < 1)
             {
