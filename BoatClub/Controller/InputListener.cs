@@ -11,8 +11,8 @@ namespace BoatClub.Controller
 
         public InputListener(MemberRegistry registry, CLI cli)
         {
-            this._registry = registry;
-            this._cli = cli;
+            _registry = registry;
+            _cli = cli;
         }
 
         public void TakeInput()
