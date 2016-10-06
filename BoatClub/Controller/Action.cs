@@ -67,7 +67,7 @@ namespace BoatClub.Controller
                         UpdateBoat();
                         break;
                     case "remove-boat":
-                        RemoveBoat();
+                        DeleteBoat();
                         break;
                     case "list-members-vl":
                         ListMembersVL();
@@ -144,12 +144,12 @@ namespace BoatClub.Controller
             _cli.DisplayMember(_registry.GetMemberById(_args[0]));
         }
 
-        private void RemoveBoat()
+        private void DeleteBoat()
         {
             var memberId = _args[0];
             var boatIndex = int.Parse(_args[1]);
 
-            _registry.RemoveBoat(memberId, boatIndex);
+            _registry.DeleteBoat(memberId, boatIndex);
         }
 
         private void ListMember()
