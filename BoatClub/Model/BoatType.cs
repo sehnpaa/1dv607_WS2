@@ -1,5 +1,4 @@
-﻿
-namespace BoatClub.Model
+﻿namespace BoatClub.Model
 {
     public enum BoatType
     {
