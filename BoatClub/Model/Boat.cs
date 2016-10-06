@@ -15,8 +15,8 @@ namespace BoatClub.Model
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value));
-                }
+                    throw new Exception("Length of boat must be over 0 m and a numeric value.");
+                } 
                 _boatLength = value;
             }
         }
@@ -31,8 +31,5 @@ namespace BoatClub.Model
             BoatType = boatType;
             BoatLength = lengthInMeters;
         }
-
-        public override string ToString() => string.Format($"{BoatType}, {BoatLength} m ");
-
     }
 }
