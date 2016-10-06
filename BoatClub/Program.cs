@@ -12,7 +12,7 @@ namespace BoatClub
             try
             {
                 var registry = new MemberRegistry();
-                var cli = new CLI(registry);
+                var cli = new CLI();
                 var inputListener = new InputListener(registry, cli);
                 inputListener.TakeInput();
             }

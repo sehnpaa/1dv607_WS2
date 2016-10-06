@@ -13,11 +13,8 @@ namespace BoatClub.View
         public static string SingleLine = new string('-', 50);
         public static string DoubleLine = new string('=', 50);
 
-        private MemberRegistry model;
-
-        public CLI(MemberRegistry model)
+        public CLI()
         {
-            this.model = model;
             DisplayApplicationHeader();
         }
         public void DisplayMember(Member member)
