@@ -8,7 +8,6 @@ namespace BoatClub.Controller
     {
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-
         }
 
         public void SendToView(CLI cli)

@@ -6,10 +6,7 @@ namespace BoatClub.Controller
 {
     internal class MembersListerCompact : ICommandHandler
     {
-        private List<Member>_memberList;
-        public MembersListerCompact()
-        {
-        }
+        private List<Member> _memberList;
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {

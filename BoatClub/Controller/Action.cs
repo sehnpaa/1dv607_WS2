@@ -104,14 +104,14 @@ namespace BoatClub.Controller
 
         private void SetCommand(string s)
         {
-            string[] words = s.Trim().Split(' ');
+            var words = s.Trim().Split(' ');
             _command = words[0];
         }
 
         private void SetArgs(string s)
         {
-            string[] words = s.Trim().Split(' ');
-            List<string> arguments = new List<string>();
+            var words = s.Trim().Split(' ');
+            var arguments = new List<string>();
 
             for (var i = 1; i < words.Length; i++)
             {

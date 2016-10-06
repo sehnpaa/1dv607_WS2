@@ -7,9 +7,9 @@ namespace BoatClub.Model
     {
         public List<Member> GetMemberList()
         {
-            List<Member> memberList = XML.GetMemberListFromXMLFile();
+            var memberList = XML.GetMemberListFromXMLFile();
             return memberList;
-        } 
+        }
 
         public void SaveMemberList(List<Member> memberList)
         {
@@ -18,7 +18,7 @@ namespace BoatClub.Model
 
         public void SaveMember(Member member)
         {
-            List<Member> memberList = GetMemberList();
+            var memberList = GetMemberList();
             memberList.Add(member);
             SaveMemberList(memberList);
         }
@@ -26,10 +26,10 @@ namespace BoatClub.Model
         public string GetNextMemberId()
         {
             int id;
-            List<Member> memberList = GetMemberList();
+            var memberList = GetMemberList();
 
             if (memberList.Count == 0) return "1";
-            string lastId = memberList[memberList.Count - 1].MemberId;
+            var lastId = memberList[memberList.Count - 1].MemberId;
             int.TryParse(lastId, out id);
             id++;
 
@@ -39,8 +39,8 @@ namespace BoatClub.Model
         public Member GetMemberById(string id)
         {
             Member memberToGet = null;
-            List<Member> memberList = GetMemberList();
-            foreach(Member member in memberList)
+            var memberList = GetMemberList();
+            foreach (var member in memberList)
             {
                 if (member.MemberId == id)
                 {
@@ -59,11 +59,11 @@ namespace BoatClub.Model
 
         public Member DeleteMemberById(string id)
         {
-            List<Member> memberList = GetMemberList();
+            var memberList = GetMemberList();
             Member deletedMember = null;
-            List<Member> updatedMemberList = new List<Member>();
+            var updatedMemberList = new List<Member>();
 
-            foreach (Member member in memberList)
+            foreach (var member in memberList)
             {
                 if (member.MemberId == id)
                 {
@@ -85,10 +85,10 @@ namespace BoatClub.Model
 
         public void UpdateMember(string memberId, string newName, string newPersonalNumber)
         {
-            List<Member> memberList = GetMemberList();
+            var memberList = GetMemberList();
             Member memberToBeFound = null;
 
-            foreach(Member member in memberList)
+            foreach (var member in memberList)
             {
                 if (member.MemberId == memberId)
                 {
@@ -114,10 +114,10 @@ namespace BoatClub.Model
 
         public void AddBoat(string memberId, Boat boat)
         {
-            List<Member> memberList = GetMemberList();
-            bool found = false;
+            var memberList = GetMemberList();
+            var found = false;
 
-            foreach (Member member in memberList)
+            foreach (var member in memberList)
             {
                 if (member.MemberId == memberId)
                 {
@@ -136,16 +136,15 @@ namespace BoatClub.Model
 
         public void UpdateBoat(string memberId, int boatIndex, string boatTypeInput, float length)
         {
-            List<Member> memberList = GetMemberList();
+            var memberList = GetMemberList();
 
-            foreach(Member member in memberList)
+            foreach (var member in memberList)
             {
-
                 if (member.MemberId == memberId)
                 {
-                    Boat boat = member.Boats[boatIndex - 1];
+                    var boat = member.Boats[boatIndex - 1];
 
-                    BoatType boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
+                    var boatType = (BoatType) Enum.Parse(typeof(BoatType), boatTypeInput);
                     boat.BoatType = boatType;
                     boat.BoatLength = length;
                 }
@@ -156,10 +155,10 @@ namespace BoatClub.Model
 
         public void DeleteBoat(string memberId, int boatIndex)
         {
-            List<Member> memberList = GetMemberList();
+            var memberList = GetMemberList();
             Member memberToBeFound = null;
 
-            foreach(Member member in memberList)
+            foreach (var member in memberList)
             {
                 if (member.MemberId == memberId)
                 {

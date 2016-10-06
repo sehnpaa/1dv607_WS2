@@ -7,13 +7,10 @@ namespace BoatClub.Controller
     internal class MemberDeleter : ICommandHandler
     {
         private Member _deletedMember;
-        public MemberDeleter()
-        {
-        }
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            string memberId = args[0];
+            var memberId = args[0];
             _deletedMember = registry.DeleteMemberById(memberId);
         }
 

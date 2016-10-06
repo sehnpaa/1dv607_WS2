@@ -7,9 +7,6 @@ namespace BoatClub.Controller
     internal class MembersListerVerbose : ICommandHandler
     {
         private List<Member> _memberList;
-        public MembersListerVerbose()
-        {
-        }
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {

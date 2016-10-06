@@ -8,22 +8,17 @@ namespace BoatClub.Controller
     internal class BoatAdder : ICommandHandler
     {
         private Member _member;
-        public BoatAdder()
-        {
-        }
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            string memberId = args[0];
-            string boatTypeInput = args[1];
-            string lengthInMetresInput = args[2];
-            Boat boat = CreateBoat(boatTypeInput, lengthInMetresInput);
+            var memberId = args[0];
+            var boatTypeInput = args[1];
+            var lengthInMetresInput = args[2];
+            var boat = CreateBoat(boatTypeInput, lengthInMetresInput);
 
             registry.AddBoat(memberId, boat);
             _member = registry.GetMemberById(memberId);
-
         }
-
 
         public void SendToView(CLI cli)
         {
@@ -36,32 +31,25 @@ namespace BoatClub.Controller
             if (Enum.IsDefined(typeof(BoatType), boatTypeInput))
             {
                 double lengthInMetres;
-                BoatType boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
+                var boatType = (BoatType) Enum.Parse(typeof(BoatType), boatTypeInput);
                 double.TryParse(lengthInMetresInput, out lengthInMetres);
-                Boat boat = new Boat(boatType, lengthInMetres);
+                var boat = new Boat(boatType, lengthInMetres);
 
                 return boat;
             }
-            else
+            var listOfValidBoatTypes = "";
+            var boatTypes = Enum.GetNames(typeof(BoatType));
+
+            for (int i = 0; i < boatTypes.Length; i++)
             {
-                string listOfValidBoatTypes = "";
-                string[] boatTypes = Enum.GetNames(typeof(BoatType));
+                listOfValidBoatTypes += boatTypes[i];
 
-                for (int i = 0; i < boatTypes.Length; i++)
+                if (i < boatTypes.Length - 1)
                 {
-                    listOfValidBoatTypes += boatTypes[i];
-
-                    if (i < boatTypes.Length - 1)
-                    {
-                        listOfValidBoatTypes += ", ";
-                    }
+                    listOfValidBoatTypes += ", ";
                 }
-
-
-
-                throw new Exception($"You have entered an invalid type of boat. \nVaild boat types: {listOfValidBoatTypes}"); // TODO showing path to exception.
             }
-
+            throw new Exception($"You have entered an invalid type of boat. \nVaild boat types: {listOfValidBoatTypes}");
         }
     }
 }

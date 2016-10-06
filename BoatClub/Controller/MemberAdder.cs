@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using BoatClub.Model;
 using BoatClub.View;
 
@@ -9,14 +8,10 @@ namespace BoatClub.Controller
     {
         private Member _member;
 
-        public MemberAdder()
-        {
-        }
-
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            string name = args[0];
-            string personalNumber = args[1];
+            var name = args[0];
+            var personalNumber = args[1];
             _member = new Member(name, personalNumber, registry.GetNextMemberId());
             registry.SaveMember(_member);
         }
@@ -26,6 +21,5 @@ namespace BoatClub.Controller
             cli.Display("Successfully added member.");
             cli.DisplayMember(_member);
         }
-
     }
 }

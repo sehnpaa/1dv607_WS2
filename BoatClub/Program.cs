@@ -11,9 +11,9 @@ namespace BoatClub
         {
             try
             {
-                MemberRegistry registry = new MemberRegistry();
-                CLI cli = new CLI();
-                InputListener inputListener = new InputListener(registry, cli);
+                var registry = new MemberRegistry();
+                var cli = new CLI();
+                var inputListener = new InputListener(registry, cli);
                 inputListener.TakeInput();
             }
             catch (Exception e)
