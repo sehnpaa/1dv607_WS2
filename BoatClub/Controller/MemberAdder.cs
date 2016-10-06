@@ -13,7 +13,7 @@ namespace BoatClub.Controller
         {
         }
 
-        public void RecieveFromM(List<string> args, MemberRegistry registry)
+        public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
             var name = args[0];
             var personalNumber = args[1];
@@ -21,7 +21,7 @@ namespace BoatClub.Controller
             registry.SaveMember(_member);
         }
 
-        public void SendToV(CLI cli)
+        public void SendToView(CLI cli)
         {
             cli.Display("Successfully added member.");
             cli.DisplayMember(_member);

@@ -9,7 +9,7 @@ namespace BoatClub.Controller
 {
     interface ICommandHandler
     {
-        void RecieveFromM(List<string> args, MemberRegistry registry);
-        void SendToV(CLI cli);
+        void RecieveFromModel(List<string> args, MemberRegistry registry);
+        void SendToView(CLI cli);
     }
 }

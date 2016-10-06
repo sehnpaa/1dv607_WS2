@@ -10,7 +10,7 @@ namespace BoatClub.Controller
         {
         }
 
-        public void RecieveFromM(List<string> args, MemberRegistry registry)
+        public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
             var id = args[0];
             var name = args[1];
@@ -18,7 +18,7 @@ namespace BoatClub.Controller
             registry.UpdateMember(id, name, personalNumber);
         }
 
-        public void SendToV(CLI cli)
+        public void SendToView(CLI cli)
         {
 
         }

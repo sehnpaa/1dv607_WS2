@@ -11,12 +11,12 @@ namespace BoatClub.Controller
         {
         }
 
-        public void RecieveFromM(List<string> args, MemberRegistry registry)
+        public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
             _memberList = registry.GetMemberList();
         }
 
-        public void SendToV(CLI cli)
+        public void SendToView(CLI cli)
         {
             if (_memberList.Count < 1)
             {

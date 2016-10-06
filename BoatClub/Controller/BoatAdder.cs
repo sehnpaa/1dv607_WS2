@@ -12,7 +12,7 @@ namespace BoatClub.Controller
         {
         }
 
-        public void RecieveFromM(List<string> args, MemberRegistry registry)
+        public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
             var memberId = args[0];
             var boatTypeInput = args[1];
@@ -24,7 +24,7 @@ namespace BoatClub.Controller
 
         }
 
-        public void SendToV(CLI cli)
+        public void SendToView(CLI cli)
         {
             cli.Display("Successfully added boat.");
             cli.DisplayMember(_member);

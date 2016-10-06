@@ -86,8 +86,8 @@ namespace BoatClub.Controller
                         commandHandler = new Helper();
                         break;
                 }
-                commandHandler.RecieveFromM(_args, _registry);
-                commandHandler.SendToV(_cli);
+                commandHandler.RecieveFromModel(_args, _registry);
+                commandHandler.SendToView(_cli);
             }
             catch (KeyNotFoundException)
             {

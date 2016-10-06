@@ -6,12 +6,12 @@ namespace BoatClub.Controller
 {
     internal class DisplayClearer : ICommandHandler
     {
-        public void RecieveFromM(List<string> args, MemberRegistry registry)
+        public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
 
         }
 
-        public void SendToV(CLI cli)
+        public void SendToView(CLI cli)
         {
             cli.ClearConsole();
         }

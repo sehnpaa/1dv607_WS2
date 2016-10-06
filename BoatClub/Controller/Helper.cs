@@ -6,12 +6,12 @@ namespace BoatClub.Controller
 {
     internal class Helper : ICommandHandler
     {
-        public void RecieveFromM(List<string> args, MemberRegistry registry)
+        public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
 
         }
 
-        public void SendToV(CLI cli)
+        public void SendToView(CLI cli)
         {
             cli.DisplayValidCommands();
         }
