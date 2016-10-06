@@ -14,10 +14,10 @@ namespace BoatClub.Controller
 
         public void RecieveFromModel(List<string> args, MemberRegistry registry)
         {
-            var memberId = args[0];
-            var boatTypeInput = args[1];
-            var lengthInMetresInput = args[2];
-            var boat = CreateBoat(boatTypeInput, lengthInMetresInput);
+            string memberId = args[0];
+            string boatTypeInput = args[1];
+            string lengthInMetresInput = args[2];
+            Boat boat = CreateBoat(boatTypeInput, lengthInMetresInput);
 
             registry.AddBoat(memberId, boat);
             _member = registry.GetMemberById(memberId);
@@ -35,9 +35,9 @@ namespace BoatClub.Controller
             if (Enum.IsDefined(typeof(BoatType), boatTypeInput))
             {
                 double lengthInMetres;
-                var boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
+                BoatType boatType = (BoatType)Enum.Parse(typeof(BoatType), boatTypeInput);
                 double.TryParse(lengthInMetresInput, out lengthInMetres);
-                var boat = new Boat(boatType, lengthInMetres);
+                Boat boat = new Boat(boatType, lengthInMetres);
 
                 return boat;
             }
