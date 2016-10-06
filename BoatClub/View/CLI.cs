@@ -72,6 +72,7 @@ namespace BoatClub.View
 
         }
 
+
         public void DisplayErrorMessage(string errorMessage)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
