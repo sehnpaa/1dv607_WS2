@@ -44,6 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Action.cs" />
+    <Compile Include="Controller\BoatAdder.cs" />
+    <Compile Include="Controller\BoatDeleter.cs" />
+    <Compile Include="Controller\BoatUpdater.cs" />
+    <Compile Include="Controller\DisplayClearer.cs" />
+    <Compile Include="Controller\Helper.cs" />
+    <Compile Include="Controller\ICommandHandler.cs" />
+    <Compile Include="Controller\MemberAdder.cs" />
+    <Compile Include="Controller\MemberDeleter.cs" />
+    <Compile Include="Controller\MemberLister.cs" />
+    <Compile Include="Controller\MembersListerCompact.cs" />
+    <Compile Include="Controller\MembersListerVerbose.cs" />
+    <Compile Include="Controller\MemberUpdater.cs" />
     <Compile Include="Model\BoatType.cs" />
     <Compile Include="Controller\InputListener.cs" />
     <Compile Include="Model\Boat.cs" />
