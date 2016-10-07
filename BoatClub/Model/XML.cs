@@ -36,12 +36,5 @@ namespace BoatClub.Model
             }
 
         }
-
-        [Obsolete("Please use GetMemberListFromXMLFile instead.")]
-        public static string load()
-        {
-            // Load data
-            return "dummy data";
-        }
     }
 }
