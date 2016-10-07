@@ -8,9 +8,13 @@
 **Member:** [Christian Trosell](https://github.com/krockgardin)  
 
 **First Submisson**
-* [Sequence Diagram - Create member](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ3JlYXRlIG1lbWJlcgoKUHJvZ3JhbS0-SW5wdXRMaXN0ZW5lcjogVGFrZQAOBQoKbG9vcAogICAgABYNLT5Db25zb2xlOiBXcml0ZUxpbmUACR1SZWFkABwJADUHLQBoEABUFEFjdGlvbjogQ2FsbAplbmQKCgAMBi0-TQCBQAVBZGRlcjogUmVjaWV2ZUZyb21Nb2RlbCAAERdTZW5kVG8AHgUKCgA3CwBHCFJlZ2lzdHJ5OiBTYXZlAF0GACEIABQIABAcTGlzdAAeElhNTAAVEFRvWE1MRmlsZQB4D0NMSTogRGlzcGxheQpDTEkAglUVABkaAIErBwAhGA&s=patent)
-* [Sequence Diagram - Look at member info](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgTG9vayBhdCBtZW1iZXIgaW5mbwoKUHJvZ3JhbS0-SW5wdXRMaXN0ZW5lcjogVGFrZQAOBQoKbG9vcAogICAgABYNLT5Db25zb2xlOiBXcml0ZUxpbmUACR1SZWFkABwJADUHLQBoEABUFEFjdGlvbjogQ2FsbAplbmQKCgAMBi0-TQCBRQUAgTAFcjogUmVjaWV2ZUZyb21Nb2RlbCAAERhTZW5kVG8AHwUKCgA4DABKCFJlZ2lzdHJ5OiBHZXQAXwZCeUlkACUIABcIABQbTGlzdAAdElhNTAAVD0Zyb21YTUxGaWxlClhNTC0AcREAYxAAgWYPAIEwEENMSTogRGlzcGxheQpDTEkAgxEVABkbAIJMBgAhGQ&s=patent)
-* [Class Diagram - Boat Club](https://github.com/sehnpaa/1dv607_WS2/blob/master/Domain_BoatClub_1dv607.png)
+* [Sequence Diagram - Create member][sd-cm]
+* [Sequence Diagram - Look at member info][sd-lami]
+* [Class Diagram - Boat Club][cd-bc]
+
+[sd-cm]: https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ3JlYXRlIG1lbWJlcgoKUHJvZ3JhbS0-SW5wdXRMaXN0ZW5lcjogVGFrZQAOBQoKbG9vcAogICAgABYNLT5Db25zb2xlOiBXcml0ZUxpbmUACR1SZWFkABwJADUHLQBoEABUFEFjdGlvbjogQ2FsbAplbmQKCgAMBi0-TQCBQAVBZGRlcjogUmVjaWV2ZUZyb21Nb2RlbCAAERdTZW5kVG8AHgUKCgA3CwBHCFJlZ2lzdHJ5OiBTYXZlAF0GACEIABQIABAcTGlzdAAeElhNTAAVEFRvWE1MRmlsZQB4D0NMSTogRGlzcGxheQpDTEkAglUVABkaAIErBwAhGA&s=patent
+[sd-lami]: https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgTG9vayBhdCBtZW1iZXIgaW5mbwoKUHJvZ3JhbS0-SW5wdXRMaXN0ZW5lcjogVGFrZQAOBQoKbG9vcAogICAgABYNLT5Db25zb2xlOiBXcml0ZUxpbmUACR1SZWFkABwJADUHLQBoEABUFEFjdGlvbjogQ2FsbAplbmQKCgAMBi0-TQCBRQUAgTAFcjogUmVjaWV2ZUZyb21Nb2RlbCAAERhTZW5kVG8AHwUKCgA4DABKCFJlZ2lzdHJ5OiBHZXQAXwZCeUlkACUIABcIABQbTGlzdAAdElhNTAAVD0Zyb21YTUxGaWxlClhNTC0AcREAYxAAgWYPAIEwEENMSTogRGlzcGxheQpDTEkAgxEVABkbAIJMBgAhGQ&s=patent
+[cd-bc]: https://github.com/sehnpaa/1dv607_WS2/blob/master/Domain_BoatClub_1dv607.png
 
 
 # Boat Club
