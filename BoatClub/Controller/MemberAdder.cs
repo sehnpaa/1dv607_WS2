@@ -13,7 +13,7 @@ namespace BoatClub.Controller
             var name = args[0];
             var personalNumber = args[1];
             _member = new Member(name, personalNumber, registry.GetNextMemberId());
-            registry.SaveMember(_member);
+            registry.SaveMember(name, personalNumber);
         }
 
         public void SendToView(CLI cli)
