@@ -16,9 +16,10 @@ namespace BoatClub.Model
             XML.SaveMemberListToXMLFile(memberList);
         }
 
-        public void SaveMember(Member member)
+        public void SaveMember(string name, string personalNumber)
         {
             var memberList = GetMemberList();
+            var member = new Member(name, personalNumber, GetNextMemberId());
             memberList.Add(member);
             SaveMemberList(memberList);
         }
