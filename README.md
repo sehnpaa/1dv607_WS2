@@ -16,6 +16,8 @@
 [sd-lami]: https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgTG9vayBhdCBtZW1iZXIgaW5mbwoKUHJvZ3JhbS0-SW5wdXRMaXN0ZW5lcjogVGFrZQAOBQoKbG9vcAogICAgABYNLT5Db25zb2xlOiBXcml0ZUxpbmUACR1SZWFkABwJADUHLQBoEABUFEFjdGlvbjogQ2FsbAplbmQKCgAMBi0-TQCBRQUAgTAFcjogUmVjaWV2ZUZyb21Nb2RlbCAAERhTZW5kVG8AHwUKCgA4DABKCFJlZ2lzdHJ5OiBHZXQAXwZCeUlkACUIABcIABQbTGlzdAAdElhNTAAVD0Zyb21YTUxGaWxlClhNTC0AcREAYxAAgWYPAIEwEENMSTogRGlzcGxheQpDTEkAgxEVABkbAIJMBgAhGQ&s=patent
 [cd-bc]: https://github.com/sehnpaa/1dv607_WS2/blob/master/First_submission/Domain_BoatClub_1dv607.png
 
+**Final submission**
+* [Updated class diagram](https://github.com/sehnpaa/1dv607_WS2/blob/master/Final_submission/Domain_BoatClub_1dv607_v2.png)
 
 # Boat Club
 ## Developers
